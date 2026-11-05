@@ -44,7 +44,7 @@
 
 .item {
   border-top: 1px solid rgba(32, 36, 26, 0.7);
-  padding: calc(var(--u) * 16) 0 calc(var(--u) * 11.6);
+  padding: calc(var(--u) * 25) 0 calc(var(--u) * 11.6);
 }
 
 .item + .item {

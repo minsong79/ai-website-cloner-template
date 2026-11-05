@@ -576,8 +576,9 @@ section.contact {
   }
 
   .col[data-col="3"] .colTitle {
-    width: 367px;
-    margin: 31px 0 0 648px;
+    /* source box is 367px wide at x=648; narrowed around the same center (831.5px) so it never overflows the stage */
+    width: 297px;
+    margin: 31px 0 0 683px;
   }
 
   .col[data-col="3"] .colText {

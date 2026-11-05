@@ -50,6 +50,9 @@ function useActiveKey(pathname: string): ActiveKey {
         const bottom = section ? section.getBoundingClientRect().bottom - offset : top + window.innerHeight;
         if (top <= 1 && bottom > 0) next = id;
       }
+      // At the very bottom Wix selects its "bottom of page" anchor, which is not in the menu.
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0 && window.scrollY >= max - 1) next = "home";
       setAnchor(next);
     };
     update();

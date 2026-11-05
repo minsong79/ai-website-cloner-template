@@ -162,7 +162,7 @@
 }
 
 .menu {
-  padding: calc(var(--u) * 22) calc(var(--u) * 27) 0;
+  padding: calc(var(--u) * 22) calc(var(--u) * 13) 0 calc(var(--u) * 27);
 }
 
 .menuTitle {
@@ -180,7 +180,7 @@
 }
 
 .section {
-  margin-top: calc(var(--u) * 16);
+  margin-top: 0;
   padding-top: calc(var(--u) * 16);
   scroll-margin-top: calc(var(--u) * 58);
 }
@@ -201,8 +201,10 @@
 
 .cards {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: calc(var(--u) * 24);
   margin-top: calc(var(--u) * 32);
+  margin-right: calc(var(--u) * 14);
 }
 
 .card {
@@ -403,7 +405,7 @@
   }
 
   .menu {
-    padding: calc(var(--u) * 31) calc(var(--u) * 59) 0;
+    padding: calc(var(--u) * 31) calc(var(--u) * 59) 0 calc(var(--u) * 59);
   }
 
   .menuTitle {
@@ -432,8 +434,9 @@
   }
 
   .cards {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     margin-top: calc(var(--u) * 31.8);
+    margin-right: 0;
   }
 
   .card {

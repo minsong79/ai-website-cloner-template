@@ -20,8 +20,7 @@
 }
 
 .date,
-.titleButton,
-.rsvpDesktop {
+.titleButton {
   display: none;
 }
 
@@ -106,8 +105,12 @@
   opacity: 0.8;
 }
 
+.rsvpDesktop {
+  display: none;
+}
+
 .rsvpMobile {
-  margin-top: calc(var(--u) * 33);
+  margin-top: calc(var(--u) * 32);
   height: calc(var(--u) * 42);
 }
 

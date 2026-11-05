@@ -1,10 +1,6 @@
 .page {
   color: var(--sage);
-  padding: calc(var(--u) * 20) calc(var(--u) * 20) calc(var(--u) * 60);
-}
-
-.emptyBox {
-  min-height: calc(var(--u) * 351);
+  padding: calc(var(--u) * 40) calc(var(--u) * 20) calc(var(--u) * 41);
 }
 
 .title {
@@ -15,7 +11,7 @@
 }
 
 .emptyBody {
-  padding: calc(var(--u) * 111) 0 calc(var(--u) * 120);
+  padding: calc(var(--u) * 111) 0 calc(var(--u) * 109);
   border-bottom: 1px solid rgba(207, 211, 199, 0.3);
   text-align: center;
 }
@@ -222,15 +218,19 @@
   .page {
     width: calc(var(--u) * 940);
     margin: 0 auto;
-    padding: calc(var(--u) * 65) 0 calc(var(--u) * 100);
+    padding: calc(var(--u) * 65) 0 calc(var(--u) * 28);
   }
 
   .emptyBox {
-    min-height: calc(var(--u) * 502);
+    padding-bottom: calc(var(--u) * 14);
   }
 
   .emptyBody {
-    padding: calc(var(--u) * 176) 0 calc(var(--u) * 186);
+    padding: calc(var(--u) * 175) 0 calc(var(--u) * 175);
+  }
+
+  .continue {
+    margin-top: calc(var(--u) * 15.8);
   }
 
   .layout {

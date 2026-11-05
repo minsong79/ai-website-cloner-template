@@ -22,7 +22,7 @@ export function OrderOnlinePage() {
   const cart = useCart();
   const count = cartCount(cart);
   const [item, setItem] = useState<MenuItem | null>(null);
-  const [fulfillmentOpen, setFulfillmentOpen] = useState(false);
+  const [fulfillmentOpen, setFulfillmentOpen] = useState<"pickup" | "delivery" | null>(null);
   const [active, setActive] = useState(MENU_SECTIONS[0].id);
   const delivery = cart.fulfillment.method === "delivery";
 
@@ -63,11 +63,11 @@ export function OrderOnlinePage() {
         </p>
         <div className={styles.toggle} role="radiogroup" aria-label="Fulfillment method">
           <button type="button" role="radio" aria-checked={!delivery} onClick={() => {
-              if (delivery) setFulfillmentOpen(true);
+              if (delivery) setFulfillmentOpen("pickup");
             }}>
             Pickup
           </button>
-          <button type="button" role="radio" aria-checked={delivery} onClick={() => setFulfillmentOpen(true)}>
+          <button type="button" role="radio" aria-checked={delivery} onClick={() => setFulfillmentOpen("delivery")}>
             Delivery
           </button>
         </div>
@@ -75,7 +75,7 @@ export function OrderOnlinePage() {
           <p className={styles.infoItem}>
             <ClockIcon className={styles.infoIcon} />
             <span>{delivery ? "Delivery time: Up to 30 minutes" : "Pickup time: Up to 30 minutes"}</span>
-            <button type="button" className={styles.change} onClick={() => setFulfillmentOpen(true)}>
+            <button type="button" className={styles.change} onClick={() => setFulfillmentOpen(cart.fulfillment.method)}>
               Change
             </button>
           </p>
@@ -156,7 +156,11 @@ export function OrderOnlinePage() {
       )}
 
       <ItemModal item={item} onClose={() => setItem(null)} />
-      <FulfillmentModal open={fulfillmentOpen} initial={cart.fulfillment} onClose={() => setFulfillmentOpen(false)} />
+      <FulfillmentModal
+        open={fulfillmentOpen !== null}
+        initial={{ method: fulfillmentOpen ?? cart.fulfillment.method, address: cart.fulfillment.address }}
+        onClose={() => setFulfillmentOpen(null)}
+      />
     </section>
   );
 }
