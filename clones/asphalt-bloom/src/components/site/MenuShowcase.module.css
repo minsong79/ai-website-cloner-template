@@ -1,0 +1,61 @@
+/* The Wix Menus widget uses fixed pixel type and spacing (it does not scale). */
+.widget {
+  padding: 20px;
+}
+
+.section + .section {
+  margin-top: 80px;
+}
+
+.section:first-child {
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  padding: 15px 0;
+  border-top: 1px solid rgb(222 221 219 / 0.3);
+  border-bottom: 1px solid rgb(222 221 219 / 0.3);
+  font-family: var(--f-helv);
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--c-gray);
+}
+
+.items {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 40px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 12px;
+  font-family: var(--f-mono);
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.name {
+  color: var(--c-gold);
+}
+
+.description {
+  color: var(--c-light);
+}
+
+.price {
+  line-height: 1.4;
+  color: var(--c-gold);
+}
+
+@media (min-width: 1024px) {
+  .items {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 20px;
+  }
+}

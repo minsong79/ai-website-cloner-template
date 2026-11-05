@@ -1,0 +1,227 @@
+/*
+ * Contact page. Mobile first (390px units, horizontal in % of the viewport);
+ * desktop: 20px fixed side gutters with %-based columns, vertical values in --u.
+ */
+.stage {
+  height: 100%;
+}
+
+.container {
+  position: absolute;
+  inset: 0;
+}
+
+.container > * {
+  position: absolute;
+  margin: 0;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+.intro {
+  height: calc(822.9 * var(--u));
+  background: var(--cream);
+}
+
+.title {
+  left: calc(100% * 48 / 390);
+  top: calc(114 * var(--u));
+  width: calc(100% * 294 / 390);
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: calc(26 * var(--u));
+  line-height: 1em;
+  letter-spacing: -0.05em;
+  text-align: center;
+}
+
+.lead {
+  left: calc(100% * 95.5 / 390);
+  top: calc(153 * var(--u));
+  width: calc(100% * 199 / 390);
+  font-size: calc(16 * var(--u));
+  line-height: 1.25em;
+  text-align: center;
+}
+
+.email,
+.phone {
+  left: calc(100% * 48 / 390);
+  width: calc(100% * 294 / 390);
+  font-size: calc(16 * var(--u));
+  line-height: 1.25em;
+  text-align: center;
+}
+
+.email {
+  top: calc(244.9 * var(--u));
+}
+
+.phone {
+  top: calc(266.8 * var(--u));
+}
+
+.photo {
+  left: calc(100% * 45 / 390);
+  top: calc(317.8 * var(--u));
+  width: calc(100% * 299.9 / 390);
+  height: calc(263.1 * var(--u));
+  overflow: hidden;
+}
+
+.hoursTitle {
+  left: calc(100% * 48 / 390);
+  top: calc(646.9 * var(--u));
+  width: calc(100% * 294 / 390);
+  font-weight: 700;
+  font-size: calc(20 * var(--u));
+  line-height: 1em;
+  text-align: center;
+}
+
+.hours {
+  left: calc(100% * 27 / 390);
+  top: calc(684.3 * var(--u));
+  width: calc(100% * 336 / 390);
+  font-size: calc(16 * var(--u));
+  line-height: 1.25em;
+}
+
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hoursRow + .hoursRow {
+  margin-top: calc(1.9 * var(--u));
+}
+
+.hoursRow dt,
+.hoursRow dd {
+  margin: 0;
+}
+
+.formSection {
+  height: calc(724 * var(--u));
+  background: var(--cream);
+}
+
+.formTitle {
+  left: calc(100% * 24 / 390);
+  top: calc(54.9 * var(--u));
+  width: calc(100% * 294 / 390);
+  font-weight: 700;
+  font-size: calc(20 * var(--u));
+  line-height: 1em;
+}
+
+.form {
+  left: calc(100% * 24 / 390);
+  top: calc(83.9 * var(--u));
+  width: calc(100% * 342 / 390);
+}
+
+.map {
+  left: calc(100% * 24 / 390);
+  top: calc(524 * var(--u));
+  width: calc(100% * 342 / 390);
+  height: calc(200 * var(--u));
+}
+
+@media (min-width: 1024px) {
+  .container {
+    left: 20px;
+    right: 20px;
+  }
+
+  .intro {
+    height: calc(625 * var(--u));
+  }
+
+  .title {
+    left: 0;
+    top: calc(84 * var(--u));
+    width: 28.685%;
+    font-size: calc(44 * var(--u));
+    text-align: left;
+  }
+
+  .lead {
+    left: 0;
+    top: calc(177.9 * var(--u));
+    width: 24.565%;
+    font-size: calc(15 * var(--u));
+    text-align: left;
+  }
+
+  .email,
+  .phone {
+    top: calc(588.6 * var(--u));
+    width: 10.476%;
+    font-size: calc(15 * var(--u));
+    white-space: nowrap;
+  }
+
+  .email {
+    left: 0.105%;
+    text-align: left;
+  }
+
+  .phone {
+    left: 19.718%;
+    text-align: right;
+  }
+
+  .photo {
+    left: 33.218%;
+    top: calc(102 * var(--u));
+    width: 32.258%;
+    height: auto;
+    aspect-ratio: 400 / 505;
+  }
+
+  .hoursTitle {
+    left: 68.266%;
+    top: calc(476.5 * var(--u));
+    width: 30.96%;
+    font-size: calc(24 * var(--u));
+    text-align: left;
+  }
+
+  .hours {
+    left: 68.266%;
+    top: calc(518.8 * var(--u));
+    width: 31.5%;
+    font-size: calc(15 * var(--u));
+  }
+
+  .hoursRow + .hoursRow {
+    margin-top: calc(4.2 * var(--u));
+  }
+
+  .formSection {
+    height: calc(961 * var(--u));
+  }
+
+  .formTitle {
+    left: 31.048%;
+    top: calc(68.9 * var(--u));
+    width: 27.9%;
+    font-size: calc(24 * var(--u));
+  }
+
+  .form {
+    left: 31.048%;
+    top: calc(99.4 * var(--u));
+    width: 38.137%;
+  }
+
+  .map {
+    left: 0.105%;
+    top: calc(507.5 * var(--u));
+    width: 99.79%;
+    height: calc(453.5 * var(--u));
+  }
+}

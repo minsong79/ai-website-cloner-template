@@ -1,0 +1,775 @@
+/* Home page. Mobile first (Wix mobile layout, 320 design px); desktop >= 768px. */
+
+.cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid;
+  box-sizing: border-box;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: calc(var(--u) * 16);
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.buttonLight {
+  background: var(--sand);
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.buttonLight:hover {
+  background: var(--ink);
+  border-color: var(--sage);
+  color: var(--sand);
+}
+
+.buttonDark {
+  background: var(--ink);
+  border-color: var(--sand);
+  color: var(--sand);
+}
+
+.buttonDark:hover {
+  background: var(--sand);
+  border-color: var(--sage);
+  color: var(--ink);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  height: calc(var(--u) * 451);
+  background: var(--olive);
+}
+
+.heroMedia {
+  position: absolute !important;
+  inset: 0;
+}
+
+.tagline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: grid;
+  grid-template-rows: calc(var(--u) * 71) calc(var(--u) * 64);
+  row-gap: 2px;
+  padding: 1px 0;
+  background: rgba(225, 208, 182, 0.55);
+}
+
+.taglineCell {
+  position: relative;
+  background: rgba(32, 36, 26, 0.85);
+}
+
+.heroTitle {
+  position: absolute;
+  left: calc(var(--u) * 19);
+  top: calc(var(--u) * 20);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 26);
+  line-height: 1.2;
+  color: var(--sand);
+  white-space: nowrap;
+}
+
+.heroSub {
+  position: absolute;
+  left: calc(var(--u) * 19);
+  top: calc(var(--u) * 20);
+  font-size: calc(var(--u) * 17);
+  line-height: 1.4;
+  color: var(--sand);
+  white-space: nowrap;
+}
+
+/* ---------- Make Yourself at Home ---------- */
+.welcome {
+  position: relative;
+  height: calc(var(--u) * 986);
+}
+
+.welcomeBand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: calc(var(--u) * 497);
+  background: var(--sand);
+}
+
+.welcomeKicker,
+.welcomeTitle,
+.welcomeText,
+.specialKicker,
+.specialTitle,
+.specialText {
+  position: absolute;
+  left: calc(var(--u) * 20);
+  width: calc(var(--u) * 280);
+}
+
+.welcomeKicker {
+  top: calc(var(--u) * 55);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 17);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.welcomeTitle {
+  top: calc(var(--u) * 96);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 26);
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.welcomeImage {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  top: calc(var(--u) * 497);
+  height: calc(var(--u) * 236);
+  background: var(--olive);
+}
+
+.welcomeCol {
+  position: static;
+}
+
+.welcomeInner {
+  position: static;
+}
+
+.welcomeText {
+  top: calc(var(--u) * 242);
+  width: calc(var(--u) * 264);
+  font-size: calc(var(--u) * 15);
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.welcomeButtonWrap {
+  position: absolute;
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 415);
+  width: calc(var(--u) * 143);
+  height: calc(var(--u) * 42);
+}
+
+.welcomeButtonWrap .button {
+  font-size: calc(var(--u) * 13.9333);
+}
+
+.happy {
+  position: absolute;
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 770);
+  width: calc(var(--u) * 280);
+  height: calc(var(--u) * 180);
+  border: 1px solid var(--sand);
+  background: var(--ink);
+  box-sizing: border-box;
+  color: var(--sand);
+}
+
+.happy > * {
+  position: absolute;
+  left: calc(var(--u) * 10);
+}
+
+.happyKicker {
+  top: calc(var(--u) * 10);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 17);
+  line-height: 1.4;
+}
+
+.happyTitle {
+  top: calc(var(--u) * 44);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 26);
+  line-height: 1.2;
+}
+
+.happyLine {
+  top: calc(var(--u) * 93);
+  width: calc(var(--u) * 258);
+  height: 1px;
+  background: var(--sand);
+}
+
+.happyTime,
+.happyDays {
+  font-size: calc(var(--u) * 15);
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.happyTime {
+  top: calc(var(--u) * 109);
+}
+
+.happyDays {
+  top: calc(var(--u) * 143);
+}
+
+/* ---------- This Month's Special ---------- */
+.special {
+  position: relative;
+  height: calc(var(--u) * 636);
+}
+
+.specialImage {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: calc(var(--u) * 167);
+  background: var(--ink);
+}
+
+.specialCol,
+.specialInner {
+  position: static;
+}
+
+.specialKicker {
+  top: calc(var(--u) * 211);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 17);
+  line-height: 1.4;
+}
+
+.specialTitle {
+  top: calc(var(--u) * 245);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 26);
+  line-height: 1.2;
+}
+
+.specialText {
+  top: calc(var(--u) * 357);
+  width: calc(var(--u) * 263);
+  font-size: calc(var(--u) * 15);
+  line-height: 1.6;
+}
+
+.specialButtonWrap {
+  position: absolute;
+  left: calc(var(--u) * 21);
+  top: calc(var(--u) * 535);
+  width: calc(var(--u) * 134);
+  height: calc(var(--u) * 42);
+}
+
+.badge {
+  --reveal-rotate: 18.26deg;
+  position: absolute;
+  left: calc(var(--u) * 221.5);
+  top: calc(var(--u) * 137.5);
+  width: calc(var(--u) * 78);
+  height: calc(var(--u) * 78);
+  transform: rotate(var(--reveal-rotate));
+}
+
+.badge img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Happy Moments ---------- */
+.moments {
+  position: relative;
+  height: calc(var(--u) * 303);
+}
+
+.momentsTitle {
+  position: absolute;
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 20);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 26);
+  line-height: 1.2;
+}
+
+.slideshow {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  top: calc(var(--u) * 73);
+  height: calc(var(--u) * 225);
+}
+
+/* ---------- Upcoming Events ---------- */
+.events {
+  padding: calc(var(--u) * 43) 0 calc(var(--u) * 34);
+}
+
+.eventsTitle {
+  margin-left: calc(var(--u) * 20);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 27);
+  line-height: 1.2;
+}
+
+.eventsList {
+  margin-top: calc(var(--u) * 41.6);
+  padding: 0 calc(var(--u) * 20);
+}
+
+/* ---------- Reserve a Table ---------- */
+.reserve {
+  position: relative;
+  padding-top: calc(var(--u) * 1);
+}
+
+.anchor {
+  position: absolute;
+  top: 0;
+}
+
+.reserveBand {
+  min-height: calc(var(--u) * 584);
+  padding-top: calc(var(--u) * 4);
+  box-sizing: border-box;
+  background: var(--sand);
+}
+
+/* ---------- Drop by ---------- */
+.dropBy {
+  position: relative;
+  height: calc(var(--u) * 507);
+  background: var(--rust);
+}
+
+.dropByMedia {
+  position: absolute !important;
+  inset: 0;
+}
+
+.card {
+  position: absolute;
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 49);
+  width: calc(var(--u) * 280);
+  height: calc(var(--u) * 409);
+  border: 1px solid var(--ink);
+  border-radius: calc(var(--u) * 300);
+  background: var(--sand);
+  box-sizing: border-box;
+  color: var(--ink);
+  text-align: center;
+}
+
+.card > * {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.cardStarTop,
+.cardStarBottom {
+  display: flex;
+  justify-content: center;
+}
+
+.cardStarTop svg,
+.cardStarBottom svg {
+  width: calc(var(--u) * 15);
+  height: calc(var(--u) * 15);
+}
+
+.cardStarTop {
+  top: calc(var(--u) * 31);
+}
+
+.cardStarBottom {
+  top: calc(var(--u) * 364);
+}
+
+.cardTitle {
+  top: calc(var(--u) * 67);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 26);
+  line-height: 1.2;
+}
+
+.cardLine {
+  display: flex;
+  justify-content: center;
+}
+
+.cardLine span {
+  display: block;
+  width: calc(var(--u) * 40);
+  height: 1px;
+  margin-top: calc(var(--u) * 2);
+  background: var(--ink);
+}
+
+.cardLine1 {
+  top: calc(var(--u) * 149);
+}
+
+.cardLine2 {
+  top: calc(var(--u) * 266);
+}
+
+.cardAddressTitle,
+.cardHoursTitle {
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 17);
+  line-height: 1.4;
+}
+
+.cardAddressTitle {
+  top: calc(var(--u) * 164);
+}
+
+.cardHoursTitle {
+  top: calc(var(--u) * 281);
+}
+
+.cardAddress,
+.cardHours {
+  font-size: calc(var(--u) * 15);
+  line-height: 1.6;
+}
+
+.cardAddress {
+  top: calc(var(--u) * 198);
+}
+
+.cardHours {
+  top: calc(var(--u) * 315);
+}
+
+/* ================= Desktop ================= */
+@media (min-width: 768px) {
+  .cover {
+    height: max(100lvh, 100%);
+  }
+
+  .button {
+    font-size: calc(var(--u) * 16);
+  }
+
+  .hero {
+    height: calc(var(--u) * 890);
+    margin-top: calc(var(--u) * -150);
+  }
+
+  .tagline {
+    left: 50%;
+    right: auto;
+    top: calc(var(--u) * 148);
+    transform: translateX(-50%);
+    width: max(calc(var(--u) * 980), calc(100% - var(--u) * 160));
+    height: calc(var(--u) * 100);
+    grid-template-rows: none;
+    grid-template-columns: 702fr 575fr;
+    gap: 1px;
+    padding: 1px;
+    box-sizing: border-box;
+  }
+
+  .heroTitle {
+    left: calc(var(--u) * 39);
+    top: calc(var(--u) * 23);
+    font-size: calc(var(--u) * 44);
+  }
+
+  .heroSub {
+    left: calc(var(--u) * 31);
+    top: calc(var(--u) * 35);
+    font-size: calc(var(--u) * 20);
+  }
+
+  .welcome {
+    height: calc(var(--u) * 1183);
+  }
+
+  .welcomeBand {
+    height: calc(var(--u) * 709);
+  }
+
+  .welcomeKicker {
+    left: calc(var(--u) * 100);
+    top: calc(var(--u) * 124);
+    width: calc(var(--u) * 399);
+    font-size: calc(var(--u) * 22);
+  }
+
+  .welcomeTitle {
+    left: calc(var(--u) * 100);
+    top: calc(var(--u) * 165);
+    width: calc(var(--u) * 868);
+    font-size: calc(var(--u) * 42);
+  }
+
+  .welcomeImage {
+    right: auto;
+    top: calc(var(--u) * 404);
+    width: 45%;
+    height: calc(var(--u) * 619);
+  }
+
+  .welcomeCol {
+    position: absolute;
+    left: 45%;
+    right: 0;
+    top: calc(var(--u) * 404);
+  }
+
+  .welcomeInner {
+    position: relative;
+    width: calc(var(--u) * 539);
+    margin: 0 auto;
+  }
+
+  .welcomeText {
+    left: calc(var(--u) * 19);
+    top: 0;
+    width: calc(var(--u) * 369);
+    font-size: calc(var(--u) * 16);
+  }
+
+  .welcomeButtonWrap {
+    left: calc(var(--u) * 19);
+    top: calc(var(--u) * 150);
+    width: calc(var(--u) * 168);
+    height: calc(var(--u) * 45);
+  }
+
+  .welcomeButtonWrap .button {
+    font-size: calc(var(--u) * 16);
+  }
+
+  .happy {
+    left: calc(var(--u) * 19);
+    top: calc(var(--u) * 365);
+    width: calc(var(--u) * 500);
+    height: calc(var(--u) * 255);
+  }
+
+  .happy > * {
+    left: calc(var(--u) * 47);
+  }
+
+  .happyKicker {
+    top: calc(var(--u) * 39);
+    font-size: calc(var(--u) * 22);
+  }
+
+  .happyTitle {
+    top: calc(var(--u) * 101);
+    font-size: calc(var(--u) * 42);
+  }
+
+  .happyTime,
+  .happyDays {
+    top: calc(var(--u) * 186);
+    font-size: calc(var(--u) * 16);
+  }
+
+  .happyLine {
+    left: calc(var(--u) * 156);
+    top: calc(var(--u) * 198);
+    width: calc(var(--u) * 134);
+  }
+
+  .happyDays {
+    left: calc(var(--u) * 294);
+    width: calc(var(--u) * 158);
+    text-align: right;
+  }
+
+  .special {
+    height: calc(var(--u) * 748);
+  }
+
+  .specialImage {
+    left: 50%;
+    height: 100%;
+  }
+
+  .specialCol {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+  }
+
+  .specialInner {
+    position: relative;
+    width: calc(var(--u) * 490);
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .specialKicker {
+    left: calc(var(--u) * 58);
+    top: calc(var(--u) * 151);
+    width: calc(var(--u) * 373);
+    font-size: calc(var(--u) * 22);
+  }
+
+  .specialTitle {
+    left: calc(var(--u) * 58);
+    top: calc(var(--u) * 190);
+    width: calc(var(--u) * 387);
+    font-size: calc(var(--u) * 42);
+  }
+
+  .specialText {
+    left: calc(var(--u) * 58);
+    top: calc(var(--u) * 370);
+    width: calc(var(--u) * 373);
+    font-size: calc(var(--u) * 16);
+  }
+
+  .specialButtonWrap {
+    left: calc(var(--u) * 58);
+    top: calc(var(--u) * 552);
+    width: calc(var(--u) * 129);
+    height: calc(var(--u) * 45);
+  }
+
+  .badge {
+    --reveal-rotate: 25.9911deg;
+    left: calc(50% - var(--u) * 44);
+    top: calc(var(--u) * 528);
+    width: calc(var(--u) * 139);
+    height: calc(var(--u) * 139);
+  }
+
+  .moments {
+    height: calc(var(--u) * 949);
+  }
+
+  .momentsTitle {
+    left: calc(var(--u) * 110);
+    top: calc(var(--u) * 118);
+    font-size: calc(var(--u) * 42);
+  }
+
+  .slideshow {
+    left: calc(var(--u) * 80);
+    right: calc(var(--u) * 80);
+    top: calc(var(--u) * 224);
+    height: calc(var(--u) * 722);
+  }
+
+  .events {
+    padding: calc(var(--u) * 147) 0 calc(var(--u) * 117);
+  }
+
+  .eventsBox {
+    width: max(calc(var(--u) * 980), calc(100% - var(--u) * 160));
+    margin: 0 auto;
+  }
+
+  .eventsTitle {
+    margin-left: calc(var(--u) * 31);
+    font-size: calc(var(--u) * 42);
+  }
+
+  .eventsList {
+    margin-top: calc(var(--u) * 92.6);
+    padding: 0 calc(var(--u) * 30);
+  }
+
+  .reserve {
+    padding-top: calc(var(--u) * 19);
+  }
+
+  .reserveBand {
+    min-height: calc(var(--u) * 343);
+    padding-top: calc(var(--u) * 3);
+  }
+
+  .dropBy {
+    height: calc(var(--u) * 805);
+  }
+
+  .card {
+    left: calc(50% - var(--u) * 227.5);
+    top: calc(var(--u) * 121);
+    width: calc(var(--u) * 455);
+    height: calc(var(--u) * 589);
+  }
+
+  .cardStarTop svg,
+  .cardStarBottom svg {
+    width: calc(var(--u) * 20);
+    height: calc(var(--u) * 20);
+  }
+
+  .cardStarTop {
+    top: calc(var(--u) * 61);
+  }
+
+  .cardStarBottom {
+    top: calc(var(--u) * 516);
+  }
+
+  .cardTitle {
+    top: calc(var(--u) * 118);
+    font-size: calc(var(--u) * 42);
+  }
+
+  .cardLine1 {
+    top: calc(var(--u) * 247);
+  }
+
+  .cardLine2 {
+    top: calc(var(--u) * 383);
+  }
+
+  .cardAddressTitle,
+  .cardHoursTitle {
+    font-size: calc(var(--u) * 22);
+  }
+
+  .cardAddressTitle {
+    top: calc(var(--u) * 264);
+  }
+
+  .cardHoursTitle {
+    top: calc(var(--u) * 405);
+  }
+
+  .cardAddress,
+  .cardHours {
+    font-size: calc(var(--u) * 16);
+  }
+
+  .cardAddress {
+    top: calc(var(--u) * 306);
+  }
+
+  .cardHours {
+    top: calc(var(--u) * 445);
+  }
+}

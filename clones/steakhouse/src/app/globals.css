@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/*
+ * Steakhouse (Wix template 1807) — global tokens and base styles.
+ * Desktop layout (>= 980px) reproduces the classic Wix 980px stage.
+ * Below 980px the source's 320px mobile layout is reproduced and scaled
+ * with --u (1 source mobile pixel), capped so tablets get a 480px column.
+ */
+
+@font-face {
+  font-family: "Anton";
+  src: url("/assets/fonts/anton-400-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Commercial fonts: downloaded locally by `npm run fetch-fonts` (not committed). */
+@font-face {
+  font-family: "Lulo Clean";
+  src: url("/assets/fonts/licensed/lulo-clean-w01-one-bold.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir LT 35 Light";
+  src: url("/assets/fonts/licensed/avenir-lt-w01-35-light.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-gold: var(--gold);
+  --color-charcoal: var(--charcoal);
+  --font-lulo: var(--font-lulo);
+  --font-serif: var(--font-georgia);
+}
+
+:root {
+  --gold: #ae9a64;
+  --charcoal: #323232;
+  --mailing: #242323;
+  --white: #ffffff;
+  --font-lulo: "Lulo Clean", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --font-anton: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --font-georgia: georgia, palatino, "book antiqua", "palatino linotype", serif;
+  --font-avenir: "Avenir LT 35 Light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --u: min(calc(100vw / 320), 1.5px);
+  --header-h: calc(74 * var(--u));
+}
+
+@media (min-width: 980px) {
+  :root {
+    --header-h: 76px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--charcoal);
+  color: var(--white);
+  font-family: var(--font-georgia);
+  overflow-x: clip;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Lulo Clean is a caps-only face; uppercase keeps the fallback stack faithful. */
+.lulo {
+  font-family: var(--font-lulo);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.serif {
+  font-family: var(--font-georgia);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.site-root {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  display: block;
+}

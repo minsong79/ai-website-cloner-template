@@ -1,0 +1,223 @@
+/* Wix Events list widget. Mobile first (320 design), desktop from 768px. */
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--sand);
+}
+
+.item {
+  border-top: 1px solid var(--sand);
+  padding-bottom: calc(var(--u) * 11);
+}
+
+.item:last-child {
+  border-bottom: 1px solid var(--sand);
+}
+
+.head {
+  padding-top: calc(var(--u) * 11);
+}
+
+.date,
+.titleButton {
+  display: none;
+}
+
+.titleLink {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 17);
+  line-height: 1.4;
+}
+
+.dateMobile {
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 16);
+  line-height: 1.4;
+}
+
+.moreInfo {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--u) * 5);
+  margin-top: calc(var(--u) * 11.6);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 16);
+  line-height: 1.4;
+  color: var(--cream);
+}
+
+.moreInfo span {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.moreChevron {
+  width: calc(var(--u) * 14);
+  height: calc(var(--u) * 8);
+  transition: transform 0.2s ease;
+}
+
+.item[data-expanded="true"] .moreChevron {
+  transform: rotate(180deg);
+}
+
+.details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.item[data-expanded="true"] .details {
+  grid-template-rows: 1fr;
+}
+
+.detailsInner {
+  overflow: hidden;
+  font-size: calc(var(--u) * 15);
+  line-height: calc(var(--u) * 18);
+  color: var(--cream);
+}
+
+.item[data-expanded="true"] .detailsInner {
+  padding-top: calc(var(--u) * 13);
+}
+
+.description {
+  margin-top: calc(var(--u) * 20);
+}
+
+.rsvp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--sand);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: calc(var(--u) * 16);
+  color: var(--sand);
+  box-sizing: border-box;
+  transition: opacity 0.2s ease;
+}
+
+.rsvp:hover {
+  opacity: 0.8;
+}
+
+.rsvpDesktop {
+  display: none;
+}
+
+.rsvpMobile {
+  margin-top: calc(var(--u) * 32);
+  height: calc(var(--u) * 42);
+}
+
+.item[data-expanded="true"] .rsvpMobile {
+  margin-top: calc(var(--u) * 27);
+}
+
+@media (min-width: 768px) {
+  .item {
+    padding-bottom: 0;
+  }
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: calc(var(--u) * 22) calc(var(--u) * 3) calc(var(--u) * 24.4);
+  }
+
+  .item[data-expanded="true"] .head {
+    padding-top: calc(var(--u) * 10);
+    padding-bottom: 0;
+  }
+
+  .titleLink,
+  .dateMobile,
+  .moreInfo,
+  .rsvpMobile {
+    display: none;
+  }
+
+  .date {
+    display: block;
+    height: calc(var(--u) * 20);
+    font-family: var(--font-heading);
+    font-size: calc(var(--u) * 16);
+    line-height: calc(var(--u) * 24);
+  }
+
+  .titleButton {
+    display: inline-flex;
+    align-items: baseline;
+    height: calc(var(--u) * 33.6);
+    line-height: calc(var(--u) * 33.6);
+    text-align: left;
+  }
+
+  .title {
+    font-family: var(--font-heading);
+    font-size: calc(var(--u) * 24);
+  }
+
+  .location {
+    font-size: calc(var(--u) * 16);
+    color: var(--sage);
+    white-space: pre;
+  }
+
+  .slash {
+    font-family: var(--font-heading);
+    font-size: calc(var(--u) * 24);
+    color: var(--sand);
+  }
+
+  .chevron {
+    display: none;
+    width: calc(var(--u) * 18);
+    height: calc(var(--u) * 10);
+    margin-left: calc(var(--u) * 6);
+    align-self: center;
+  }
+
+  .titleButton:hover .location,
+  .item[data-expanded="true"] .location {
+    display: none;
+  }
+
+  .titleButton:hover .chevron,
+  .item[data-expanded="true"] .chevron {
+    display: block;
+  }
+
+  .item[data-expanded="true"] .chevron {
+    transform: rotate(180deg);
+  }
+
+  .rsvpDesktop {
+    display: flex;
+    flex: none;
+    width: calc(var(--u) * 100);
+    height: calc(var(--u) * 42);
+    margin-top: calc(var(--u) * 4);
+    font-size: calc(var(--u) * 15);
+  }
+
+  .detailsInner {
+    padding-left: calc(var(--u) * 3);
+    font-size: calc(var(--u) * 16);
+    line-height: 1.4;
+  }
+
+  .detailsInner p {
+    max-width: 73.5%;
+  }
+
+  .item[data-expanded="true"] .detailsInner {
+    padding-top: calc(var(--u) * 25.4);
+    padding-bottom: calc(var(--u) * 13);
+  }
+}

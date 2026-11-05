@@ -1,0 +1,47 @@
+.menus {
+  position: relative;
+  padding: calc(338 * var(--u)) 0 calc(95.1 * var(--u));
+}
+
+.title,
+.subtitle {
+  position: absolute;
+  left: calc(24 * var(--u));
+  width: calc(342 * var(--u));
+}
+
+.title {
+  top: calc(157.3 * var(--u));
+}
+
+.subtitle {
+  top: calc(251.5 * var(--u));
+}
+
+.widget {
+  margin-left: calc(17 * var(--u));
+  width: calc(355 * var(--u));
+}
+
+@media (min-width: 1024px) {
+  .menus {
+    padding: calc(622 * var(--u)) 0 calc(109 * var(--u));
+  }
+
+  .title {
+    left: calc(225.4 * var(--u));
+    top: calc(369 * var(--u));
+    width: calc(983.1 * var(--u));
+  }
+
+  .subtitle {
+    left: calc(384.1 * var(--u));
+    top: calc(485.6 * var(--u));
+    width: calc(670.9 * var(--u));
+  }
+
+  .widget {
+    margin-left: 0;
+    width: calc(100% - 1px);
+  }
+}

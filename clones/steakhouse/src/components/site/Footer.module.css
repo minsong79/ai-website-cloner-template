@@ -1,0 +1,35 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  height: calc(73 * var(--u));
+  background: var(--charcoal);
+  padding-top: calc(14 * var(--u));
+}
+
+.text {
+  width: calc(206 * var(--u));
+  margin: 0 auto;
+  font-family: var(--font-georgia);
+  font-size: calc(15 * var(--u));
+  line-height: calc(19.5 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+.text a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media (min-width: 980px) {
+  .footer {
+    height: 78px;
+    padding-top: 24px;
+  }
+
+  .text {
+    width: 688px;
+    font-size: 15px;
+    line-height: 19.5px;
+  }
+}

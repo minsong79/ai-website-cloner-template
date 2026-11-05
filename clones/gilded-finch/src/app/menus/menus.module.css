@@ -1,0 +1,23 @@
+.page {
+  background: var(--cream);
+}
+
+.stage {
+  padding: calc(100 * var(--u)) 0 calc(40 * var(--u));
+}
+
+.widget {
+  width: calc(100% * 378.1 / 390);
+  margin-left: calc(100% * 6 / 390);
+}
+
+@media (min-width: 1024px) {
+  .stage {
+    padding: calc(100.9 * var(--u)) 0 calc(67.7 * var(--u));
+  }
+
+  .widget {
+    width: calc(1270.4 * var(--u));
+    margin-left: calc(4.3 * var(--u));
+  }
+}

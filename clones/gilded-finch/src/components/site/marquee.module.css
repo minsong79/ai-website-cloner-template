@@ -1,0 +1,41 @@
+.root {
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  margin: 0;
+  overflow-x: clip;
+}
+
+.group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 17px;
+  padding-right: 17px;
+  animation: marquee-left var(--marquee-duration, 17s) linear infinite;
+}
+
+.root:hover .group,
+.paused .group {
+  animation-play-state: paused;
+}
+
+.unit {
+  display: block;
+  white-space: pre;
+  line-height: 1.2;
+}
+
+@keyframes marquee-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group {
+    animation-play-state: paused;
+  }
+}

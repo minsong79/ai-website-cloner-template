@@ -1,0 +1,247 @@
+/* Mobile first: the source's 320px mobile header, scaled by --u. */
+.header {
+  position: relative;
+  z-index: 50;
+  height: calc(74 * var(--u));
+  background: var(--gold);
+}
+
+.stage {
+  display: none;
+}
+
+.mobileBar {
+  position: relative;
+  height: 100%;
+  width: calc(320 * var(--u));
+  margin: 0 auto;
+}
+
+.mobileCart {
+  position: absolute;
+  left: calc(19 * var(--u));
+  top: calc(22 * var(--u));
+  width: calc(34 * var(--u));
+  height: calc(29 * var(--u));
+  color: var(--charcoal);
+  display: flex;
+  align-items: flex-end;
+}
+
+.cartSvg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 197.7 / 166;
+  overflow: visible;
+}
+
+.burger {
+  position: absolute;
+  left: calc(259 * var(--u));
+  top: calc(11 * var(--u));
+  width: calc(50 * var(--u));
+  height: calc(50 * var(--u));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.burger span {
+  position: absolute;
+  left: calc(14 * var(--u));
+  width: calc(22 * var(--u));
+  height: calc(2 * var(--u));
+  border-radius: calc(2 * var(--u));
+  background: var(--charcoal);
+}
+
+.burger span:nth-child(1) {
+  top: calc(15 * var(--u));
+}
+
+.burger span:nth-child(2) {
+  top: calc(24 * var(--u));
+}
+
+.burger span:nth-child(3) {
+  top: calc(33 * var(--u));
+}
+
+/* Mobile menu (MENU_AS_CONTAINER): full-screen gold panel. */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: var(--gold);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+}
+
+.mobileMenu[data-open] {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease;
+}
+
+.mobileMenu > * {
+  --menu-left: calc((100vw - 320 * var(--u)) / 2);
+}
+
+.mobileLogin {
+  position: absolute;
+  left: calc(var(--menu-left) + 125 * var(--u));
+  top: calc(15 * var(--u));
+  height: calc(30 * var(--u));
+  width: calc(95 * var(--u));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--charcoal);
+  font-size: calc(13 * var(--u));
+  line-height: calc(18.2 * var(--u));
+  cursor: pointer;
+}
+
+.mobileClose {
+  position: absolute;
+  left: calc(var(--menu-left) + 259 * var(--u));
+  top: calc(11 * var(--u));
+  width: calc(50 * var(--u));
+  height: calc(50 * var(--u));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mobileClose span {
+  position: absolute;
+  left: calc(14 * var(--u));
+  top: calc(24 * var(--u));
+  width: calc(22 * var(--u));
+  height: calc(2 * var(--u));
+  background: var(--white);
+  border-radius: calc(2 * var(--u));
+  transform: rotate(45deg);
+}
+
+.mobileClose span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.mobileList {
+  position: absolute;
+  top: calc(100 * var(--u));
+  left: calc(var(--menu-left) + 56 * var(--u));
+  width: calc(207 * var(--u));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobileLink {
+  display: block;
+  height: calc(56 * var(--u));
+  line-height: calc(56 * var(--u));
+  font-size: calc(12 * var(--u));
+  text-align: center;
+  color: var(--charcoal);
+  text-decoration: none;
+  transition: color 0.4s;
+}
+
+.mobileLink[data-active] {
+  color: var(--white);
+}
+
+/* Desktop: classic Wix 980px stage, sticky header. */
+@media (min-width: 980px) {
+  .header {
+    position: sticky;
+    top: 0;
+    height: 76px;
+  }
+
+  .mobileBar,
+  .mobileMenu {
+    display: none;
+  }
+
+  .stage {
+    display: block;
+    position: relative;
+    width: 980px;
+    height: 76px;
+    margin: 0 auto;
+  }
+
+  .nav {
+    position: absolute;
+    left: 0;
+    top: 22px;
+    width: 720px;
+    height: 30px;
+  }
+
+  .navList {
+    display: flex;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navItem {
+    flex: 1 1 auto;
+  }
+
+  .navLink {
+    display: block;
+    padding: 0 10px;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    white-space: nowrap;
+    color: var(--charcoal);
+    text-decoration: none;
+    transition: color 0.4s;
+  }
+
+  .navLink:hover,
+  .navLink[data-active] {
+    color: var(--white);
+  }
+
+  .login {
+    position: absolute;
+    right: 35px;
+    top: 23px;
+    height: 29px;
+    padding: 6px 7px;
+    border: 0;
+    background: transparent;
+    color: var(--charcoal);
+    font-size: 12px;
+    line-height: 16.8px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .login:hover {
+    opacity: 0.7;
+  }
+
+  .cart {
+    position: absolute;
+    left: 953px;
+    top: 23px;
+    width: 27px;
+    height: 23px;
+    display: flex;
+    align-items: flex-end;
+    color: var(--charcoal);
+  }
+}

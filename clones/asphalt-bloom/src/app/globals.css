@@ -1,0 +1,379 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Fonts
+   - Anton, IBM Plex Mono: Google Fonts (OFL), committed.
+   - helvetica-w01-roman: commercial Monotype font served by Wix. Not
+     committed; `npm run fetch-fonts` downloads it to
+     /assets/fonts/licensed/. Falls back to Helvetica Neue / Arial.
+   ------------------------------------------------------------------ */
+@font-face {
+  font-family: "Anton";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/anton-latin-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/ibm-plex-mono-latin-400.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/ibm-plex-mono-latin-400-italic.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "helvetica-w01-roman";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/licensed/helvetica-w01-roman.woff2") format("woff2");
+}
+
+/* ------------------------------------------------------------------
+   Design tokens
+   The source is a Wix Studio site that scales fluidly with the
+   viewport: every measurement is proportional to the width. Two
+   designs exist — desktop (>= 1024px, drawn at 1440px) and mobile
+   (< 1024px, drawn at 390px). `--u` is one design pixel; it uses
+   container query units so classic scrollbars never cause overflow.
+   ------------------------------------------------------------------ */
+:root {
+  --c-bg: #262626;
+  --c-card: #383838;
+  --c-light: #dedddb;
+  --c-gray: #bfbfbf;
+  --c-orange: #fe7f24;
+  --c-gold: #c1a67d;
+  --c-ink: #262626;
+  --c-ink-soft: #383838;
+  --c-ink-black: #0a0a0a;
+
+  --f-anton: "Anton", Impact, "Arial Narrow", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --f-helv: "helvetica-w01-roman", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --ease-in-out-sine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  --u: calc(100cqw / 390);
+  --header-h: calc(113.3 * var(--u));
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --u: calc(100cqw / 1440);
+    --header-h: calc(245.2 * var(--u));
+  }
+}
+
+@theme inline {
+  --font-anton: var(--f-anton);
+  --font-mono: var(--f-mono);
+  --font-helv: var(--f-helv);
+  --color-site-bg: var(--c-bg);
+  --color-site-light: var(--c-light);
+  --color-site-gray: var(--c-gray);
+  --color-site-orange: var(--c-orange);
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--c-light);
+  font-family: var(--f-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+ul {
+  margin: 0;
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: none;
+}
+
+/* Every page lives in one inline-size container so `--u` resolves to the
+   real content width (scrollbar excluded). */
+.site {
+  container-type: inline-size;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Textured dark section: the template paints a #262626 fill and the same
+   grunge photo on top at 25 % opacity, cropped per section. */
+.tex {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--c-bg);
+}
+
+.tex::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("/assets/images/texture.jpg");
+  background-size: cover;
+  background-position: var(--tex-pos, 50% 50%);
+  background-repeat: no-repeat;
+  opacity: var(--tex-opacity, 0.25);
+  pointer-events: none;
+}
+
+.clip {
+  overflow: clip;
+}
+
+/* ------------------------------------------------------------------
+   Type scale (mobile first, desktop >= 1024px)
+   ------------------------------------------------------------------ */
+.t-display {
+  font-family: var(--f-anton);
+  font-size: calc(34 * var(--u));
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.t-lead {
+  font-family: var(--f-helv);
+  font-size: calc(22 * var(--u));
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.t-body {
+  font-family: var(--f-mono);
+  font-size: calc(16 * var(--u));
+  line-height: 1.25;
+}
+
+.t-small {
+  font-family: var(--f-mono);
+  font-size: calc(14 * var(--u));
+  line-height: 1.25;
+  letter-spacing: -0.05em;
+}
+
+@media (min-width: 1024px) {
+  .t-display {
+    font-size: calc(93.375 * var(--u));
+  }
+
+  .t-lead {
+    font-size: calc(31.5 * var(--u));
+  }
+
+  .t-body {
+    font-size: calc(16.875 * var(--u));
+  }
+
+  .t-small {
+    font-size: calc(15.75 * var(--u));
+  }
+}
+
+.tight {
+  letter-spacing: -0.05em;
+}
+
+.c-light {
+  color: var(--c-light);
+}
+
+.c-gray {
+  color: var(--c-gray);
+}
+
+.center {
+  text-align: center;
+}
+
+/* ------------------------------------------------------------------
+   Motion (mirrors the template's Wix "motion" presets)
+   Entrance effects play once when the element enters the viewport.
+   The hidden start state only applies when scripting is enabled.
+   ------------------------------------------------------------------ */
+@keyframes ab-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ab-blur-in {
+  from {
+    filter: blur(6px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+@keyframes ab-expand-in {
+  from {
+    scale: 0.8;
+  }
+  to {
+    scale: 1;
+  }
+}
+
+@keyframes ab-grow-in {
+  from {
+    translate: 0 120px;
+    scale: 0.8;
+  }
+  to {
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+@keyframes ab-breathe {
+  0% {
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+    translate: 0 0;
+  }
+  25% {
+    animation-timing-function: var(--ease-in-out-sine);
+    translate: 0 11px;
+  }
+  75% {
+    animation-timing-function: var(--ease-in-sine);
+    translate: 0 -11px;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes ab-wiggle {
+  0% {
+    rotate: var(--rot, 0deg);
+    translate: 0 0;
+  }
+  7.74% {
+    rotate: calc(var(--rot, 0deg) + 10deg);
+    translate: 0 -10px;
+  }
+  15.05% {
+    rotate: calc(var(--rot, 0deg) - 8deg);
+    translate: 0 0;
+  }
+  22.79% {
+    rotate: calc(var(--rot, 0deg) + 6deg);
+  }
+  31.39% {
+    rotate: calc(var(--rot, 0deg) - 4deg);
+  }
+  43%,
+  100% {
+    rotate: var(--rot, 0deg);
+    translate: 0 0;
+  }
+}
+
+@media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+  [data-enter]:not([data-in]) {
+    opacity: 0;
+  }
+}
+
+[data-delay="200"] {
+  --delay: 200ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-enter="fade"][data-in] {
+    animation: ab-fade-in 1000ms var(--ease-in-out-sine) var(--delay, 0ms) backwards;
+  }
+
+  [data-enter="fade-slow"][data-in] {
+    animation: ab-fade-in 1200ms var(--ease-in-out-sine) var(--delay, 0ms) backwards;
+  }
+
+  [data-enter="fade-blur"][data-in] {
+    animation:
+      ab-fade-in 840ms var(--ease-in-sine) backwards,
+      ab-blur-in 1200ms linear backwards;
+  }
+
+  [data-enter="fade-expand"][data-in] {
+    animation:
+      ab-fade-in 1200ms linear backwards,
+      ab-expand-in 1200ms var(--ease-in-out-cubic) backwards;
+  }
+
+  [data-enter="fade-grow"][data-in] {
+    animation:
+      ab-fade-in 960ms var(--ease-in-out-cubic) backwards,
+      ab-grow-in 1200ms var(--ease-in-out-cubic) backwards;
+  }
+
+  [data-loop="breathe"] {
+    animation: ab-breathe 7500ms linear infinite;
+    animation-play-state: paused;
+  }
+
+  [data-loop="wiggle"] {
+    animation: ab-wiggle 1400ms linear infinite;
+    animation-play-state: paused;
+  }
+
+  [data-loop][data-playing] {
+    animation-play-state: running;
+  }
+
+  /* Scroll-linked values written by MotionController. */
+  [data-parallax] {
+    translate: 0 var(--parallax-y, 0px);
+  }
+
+  [data-spin] {
+    rotate: calc(var(--rot, 0deg) + var(--spin, 0deg));
+  }
+}

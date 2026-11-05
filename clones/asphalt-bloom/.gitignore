@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Build
+.next/
+out/
+build/
+dist/
+
+# Env
+.env*
+
+# Debug
+npm-debug.log*
+
+# OS
+.DS_Store
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel
+
+# Commercial fonts fetched locally by `npm run fetch-fonts` (not redistributable)
+public/assets/fonts/licensed/

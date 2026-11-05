@@ -1,0 +1,122 @@
+/* Section 1: heading + Wix form (the form keeps fixed pixel sizes). */
+.intro {
+  position: relative;
+  padding: calc(307.5 * var(--u)) 0 calc(24 * var(--u));
+}
+
+.title,
+.subtitle {
+  position: absolute;
+}
+
+.title {
+  left: calc(37.5 * var(--u));
+  top: calc(152 * var(--u));
+  width: calc(315.1 * var(--u));
+}
+
+.subtitle {
+  left: calc(48 * var(--u));
+  top: calc(242.5 * var(--u));
+  width: calc(294 * var(--u));
+}
+
+.form {
+  margin-left: calc(25.9 * var(--u));
+  width: calc(338.2 * var(--u));
+}
+
+/* Section 2: details + map. Mobile order: Contact, Location, Hours. */
+.details {
+  position: relative;
+  height: calc(1124.9 * var(--u));
+}
+
+.details > * {
+  position: absolute;
+}
+
+.block {
+  left: calc(24 * var(--u));
+  width: calc(342 * var(--u));
+}
+
+.block p {
+  margin-top: calc(11.9 * var(--u));
+}
+
+.contact {
+  top: calc(41.6 * var(--u));
+}
+
+.location {
+  top: calc(170.7 * var(--u));
+}
+
+.hours {
+  top: calc(299.8 * var(--u));
+}
+
+.map {
+  left: calc(24 * var(--u));
+  top: calc(484.7 * var(--u));
+  width: calc(342 * var(--u));
+  height: calc(600 * var(--u));
+}
+
+@media (min-width: 1024px) {
+  .intro {
+    min-height: calc(1233.6 * var(--u));
+    padding: calc(719.7 * var(--u)) 0 calc(24 * var(--u));
+  }
+
+  .title {
+    left: calc(335.6 * var(--u));
+    top: calc(374.1 * var(--u));
+    width: calc(768.5 * var(--u));
+  }
+
+  .subtitle {
+    left: calc(427.4 * var(--u));
+    top: calc(641.2 * var(--u));
+    width: calc(584.9 * var(--u));
+  }
+
+  .form {
+    margin-left: calc(463.4 * var(--u));
+    width: calc(512.8 * var(--u));
+  }
+
+  .details {
+    height: calc(713.9 * var(--u));
+  }
+
+  .block p {
+    margin-top: calc(11.7 * var(--u));
+  }
+
+  .location {
+    left: calc(19 * var(--u));
+    top: calc(25.4 * var(--u));
+    width: calc(472.6 * var(--u));
+  }
+
+  .hours {
+    left: calc(594 * var(--u));
+    top: calc(25.4 * var(--u));
+    width: calc(248.8 * var(--u));
+  }
+
+  .contact {
+    left: calc(1119.4 * var(--u));
+    top: calc(26 * var(--u));
+    width: calc(173.5 * var(--u));
+  }
+
+  .map {
+    left: calc(21.4 * var(--u));
+    top: calc(258.4 * var(--u));
+    width: calc(1396.6 * var(--u));
+    height: calc(434.2 * var(--u));
+  }
+}

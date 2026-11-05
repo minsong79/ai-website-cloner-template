@@ -1,0 +1,154 @@
+.page {
+  position: relative;
+  display: flow-root;
+  padding-bottom: calc(2 * var(--u));
+  background: var(--charcoal);
+  color: var(--gold);
+}
+
+.stage {
+  display: flow-root;
+  width: calc(320 * var(--u));
+  margin: 0 auto;
+}
+
+.title {
+  width: calc(280 * var(--u));
+  margin: calc(41 * var(--u)) 0 0 calc(20 * var(--u));
+  font-size: calc(24 * var(--u));
+  line-height: calc(28.8 * var(--u));
+  text-align: center;
+}
+
+.menu {
+  margin-top: calc(9.2 * var(--u));
+  padding: calc(20 * var(--u)) calc(30 * var(--u));
+  background: var(--charcoal);
+}
+
+.section {
+  padding-bottom: calc(40 * var(--u));
+}
+
+.sectionName {
+  margin: 0;
+  font-size: calc(19 * var(--u));
+  line-height: calc(23 * var(--u));
+}
+
+.sectionDesc {
+  margin: calc(4 * var(--u)) 0 0;
+  font-family: var(--font-georgia);
+  font-size: calc(15 * var(--u));
+  line-height: calc(18 * var(--u));
+}
+
+.items {
+  margin: calc(21 * var(--u)) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item + .item {
+  margin-top: calc(8 * var(--u));
+}
+
+.divider {
+  height: 1px;
+  margin: 0 0 calc(8 * var(--u));
+  border: 0;
+  background: rgb(128, 128, 128);
+}
+
+.itemBody {
+  position: relative;
+  padding: calc(16 * var(--u)) 0 calc(11 * var(--u));
+  font-family: var(--font-georgia);
+}
+
+.itemName {
+  margin: 0;
+  font-size: calc(17 * var(--u));
+  line-height: calc(21 * var(--u));
+  font-weight: 700;
+}
+
+.itemDesc {
+  margin: calc(12 * var(--u)) 0 0;
+  font-size: calc(16 * var(--u));
+  line-height: calc(20 * var(--u));
+}
+
+.itemPrice {
+  margin: calc(12 * var(--u)) 0 0;
+  font-size: calc(16 * var(--u));
+  line-height: calc(22.4 * var(--u));
+}
+
+@media (min-width: 980px) {
+  .page {
+    padding-bottom: 10px;
+  }
+
+  .stage {
+    width: 980px;
+  }
+
+  .title {
+    width: 890px;
+    margin: 83px 0 0 45px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .menu {
+    margin-top: 31px;
+    padding: 20px 50px;
+  }
+
+  .section {
+    padding-bottom: 43px;
+  }
+
+  .sectionName {
+    font-size: 25px;
+    line-height: 35px;
+  }
+
+  .sectionDesc {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .items {
+    margin-top: 17px;
+  }
+
+  .divider {
+    margin-bottom: 8px;
+  }
+
+  .itemBody {
+    padding: 16px 36px 8px 0;
+  }
+
+  .itemName {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .itemDesc {
+    margin-top: 13px;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .itemPrice {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
