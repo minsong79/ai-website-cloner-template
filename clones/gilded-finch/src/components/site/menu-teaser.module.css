@@ -43,10 +43,6 @@
   }
 
   .item {
-    padding: 20px 0 32px;
-  }
-
-  .description {
-    max-width: 75.4%;
+    padding: 20px 42px 32px;
   }
 }

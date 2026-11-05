@@ -35,7 +35,8 @@ export const GALLERY_ACCOUNT = "steak.house.template";
 export const GALLERY_IMAGES = [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `/assets/images/gallery-0${n}.jpg`);
 
 export const WIX_URL = "https://wix.com/?utm_campaign=vir_created_with";
-export const MAP_QUERY = "500 Terry Francine St, San Francisco, CA 94158";
+/** The template address is fictional; the source map pin sits by Civic Center, San Francisco. */
+export const MAP_QUERY = "37.7793,-122.4176";
 
 // Restaurant Menus / Online Orders — one menu ("Dinner Menu") with two sections.
 export type MenuItem = {

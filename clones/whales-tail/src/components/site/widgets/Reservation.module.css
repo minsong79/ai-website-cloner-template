@@ -1,0 +1,145 @@
+.widget {
+  --f-bg: var(--sand);
+  --f-text: var(--ink);
+  --f-border: rgba(32, 36, 26, 0.6);
+  --f-hl: #c1b49c;
+  --f-label-size: 14;
+  --f-label-gap: 8.4;
+  --f-pad: 1;
+  --f-date-pad: 12;
+  width: calc(var(--u) * 280);
+  margin: 0 auto;
+  color: var(--ink);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 42);
+  line-height: 1.4;
+}
+
+.subtitle {
+  margin-top: calc(var(--u) * 19.4);
+  font-size: calc(var(--u) * 16);
+  line-height: 1.4;
+}
+
+.form {
+  display: grid;
+  row-gap: calc(var(--u) * 16);
+  margin-top: calc(var(--u) * 40.4);
+  text-align: left;
+}
+
+.find {
+  margin-top: calc(var(--u) * 4);
+  height: calc(var(--u) * 40);
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--sand);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: calc(var(--u) * 16);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.find:hover {
+  background: var(--sand);
+  color: var(--ink);
+}
+
+@media (min-width: 768px) {
+  .widget {
+    --f-label-size: 16;
+    --f-label-gap: 7.6;
+    --f-pad: 12;
+    width: min(calc(var(--u) * 1200), calc(100% - var(--u) * 40));
+    padding-top: calc(var(--u) * 20);
+  }
+
+  .subtitle {
+    margin-top: calc(var(--u) * 40.2);
+  }
+
+  .form {
+    grid-template-columns: 1fr 1fr 1fr calc(var(--u) * 141);
+    column-gap: calc(var(--u) * 16);
+    align-items: end;
+    margin-top: calc(var(--u) * 80.6);
+  }
+
+  .find {
+    margin-top: 0;
+  }
+}
+
+/* "Online reservations are currently unavailable" dialog */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fade 0.2s ease both;
+}
+
+.dialog {
+  position: relative;
+  width: min(calc(var(--u) * 600), calc(100% - var(--u) * 40));
+  padding: calc(var(--u) * 79) calc(var(--u) * 32) calc(var(--u) * 80);
+  box-sizing: border-box;
+  background: #fff;
+  color: #000;
+  text-align: center;
+}
+
+.dialogClose {
+  position: absolute;
+  right: calc(var(--u) * 20);
+  top: calc(var(--u) * 19);
+  width: calc(var(--u) * 24);
+  height: calc(var(--u) * 24);
+}
+
+.dialogClose svg {
+  width: 100%;
+  height: 100%;
+}
+
+.dialogTitle {
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 26);
+  line-height: 1.33;
+}
+
+.dialogText {
+  margin-top: calc(var(--u) * 25);
+  font-size: calc(var(--u) * 16);
+  line-height: 1.5;
+}
+
+.dialogButton {
+  margin-top: calc(var(--u) * 36);
+  width: calc(var(--u) * 100);
+  height: calc(var(--u) * 40);
+  background: #000;
+  color: #fff;
+  font-size: calc(var(--u) * 16);
+}
+
+@media (min-width: 768px) {
+  .dialogTitle {
+    font-size: calc(var(--u) * 32);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}

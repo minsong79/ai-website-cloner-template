@@ -1,0 +1,35 @@
+.counter {
+  display: inline-flex;
+  align-items: center;
+  height: calc(var(--u) * 32);
+  border: 1px solid currentColor;
+  box-sizing: border-box;
+}
+
+.counter button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--u) * 26);
+  height: 100%;
+}
+
+.counter button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.counter svg {
+  width: calc(var(--u) * 21);
+  height: calc(var(--u) * 21);
+}
+
+.counter input {
+  width: calc(var(--u) * 26);
+  border: 0;
+  background: transparent;
+  text-align: center;
+  font-size: calc(var(--u) * 14);
+  padding: 0;
+  outline: none;
+}

@@ -1,0 +1,202 @@
+/*
+ * Reservation form fields. Theme via custom properties set by the parent:
+ * --f-bg, --f-text, --f-border, --f-hl, --f-label-size, --f-pad, --f-date-pad, --f-label-gap
+ */
+.group {
+  min-width: 0;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: calc(var(--u) * var(--f-label-size, 16));
+  line-height: 1.4;
+  color: var(--f-text);
+  margin-bottom: calc(var(--u) * var(--f-label-gap, 8));
+}
+
+.control {
+  position: relative;
+}
+
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--u) * 40);
+  border: 1px solid var(--f-border);
+  background: var(--f-bg);
+  color: var(--f-text);
+  font-family: var(--font-body);
+  font-size: calc(var(--u) * 16);
+  line-height: 1.4;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.field[data-open] {
+  border-bottom-color: var(--f-text);
+}
+
+.dropdownField {
+  padding: 0 calc(var(--u) * 40) 0 calc(var(--u) * var(--f-pad, 12));
+}
+
+.value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suffix {
+  position: absolute;
+  right: calc(var(--u) * 8);
+  top: calc(50% - var(--u) * 12);
+  width: calc(var(--u) * 24);
+  height: calc(var(--u) * 24);
+  transition: transform 0.2s ease;
+}
+
+.field[data-open] .suffix {
+  transform: rotate(180deg);
+}
+
+.list {
+  position: absolute;
+  z-index: 60;
+  left: 0;
+  right: 0;
+  top: 100%;
+  max-height: calc(var(--u) * 284);
+  overflow-y: auto;
+  margin: 0;
+  padding: calc(var(--u) * 12) 0;
+  list-style: none;
+  background: var(--f-bg);
+  border: 1px solid var(--f-border);
+  border-top: 0;
+  color: var(--f-text);
+  font-size: calc(var(--u) * 16);
+  line-height: 1.4;
+}
+
+.option {
+  padding: calc(var(--u) * 8) calc(var(--u) * 24);
+  cursor: pointer;
+}
+
+.option[data-active] {
+  background: var(--f-hl);
+}
+
+.dateField {
+  padding: 0 calc(var(--u) * 40) 0 0;
+}
+
+.dateInput {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  padding: 0 0 0 calc(var(--u) * var(--f-date-pad, 12));
+  color: inherit;
+  font-size: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+.calendarButton {
+  position: absolute;
+  right: calc(var(--u) * 8);
+  top: calc(50% - var(--u) * 12);
+  width: calc(var(--u) * 24);
+  height: calc(var(--u) * 24);
+  color: var(--f-text);
+}
+
+.calendarButton svg {
+  width: 100%;
+  height: 100%;
+}
+
+.calendar {
+  position: absolute;
+  z-index: 60;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(var(--u) * 320);
+  padding: calc(var(--u) * 20) calc(var(--u) * 20) calc(var(--u) * 24);
+  box-sizing: border-box;
+  background: var(--f-bg);
+  border: 1px solid var(--f-text);
+  color: var(--f-text);
+  font-family: var(--font-body);
+  font-size: calc(var(--u) * 16);
+}
+
+.calHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--u) * 40);
+}
+
+.calHead button {
+  width: calc(var(--u) * 24);
+  height: calc(var(--u) * 24);
+}
+
+.calHead svg {
+  width: 100%;
+  height: 100%;
+}
+
+.calGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-top: calc(var(--u) * 4);
+  row-gap: calc(var(--u) * 1);
+  text-align: center;
+}
+
+.weekday {
+  height: calc(var(--u) * 40);
+  line-height: calc(var(--u) * 40);
+}
+
+.day {
+  height: calc(var(--u) * 38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--f-text);
+}
+
+.day span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--u) * 36);
+  height: calc(var(--u) * 36);
+  border-radius: 50%;
+}
+
+.day[data-outside],
+.day:disabled {
+  opacity: 0.5;
+}
+
+.day:disabled {
+  cursor: default;
+}
+
+.day:not(:disabled):hover span {
+  background: var(--f-hl);
+}
+
+.day[data-selected] span {
+  background: var(--sage);
+  color: var(--ink);
+}

@@ -20,7 +20,7 @@ export function MapEmbed({ className }: { className?: string }) {
       <iframe
         className={styles.frame}
         title="Google Maps"
-        src={`https://maps.google.com/maps?q=${LAT},${LNG}&z=16&hl=en&output=embed`}
+        src={`https://www.google.com/maps?q=${LAT},${LNG}&z=16&hl=en&output=embed`}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         allowFullScreen

@@ -1,0 +1,131 @@
+/* Wix Restaurants Menus widget page. Mobile page background is umber (#38342e). */
+.page {
+  background: var(--umber);
+  padding: 0 calc(var(--u) * 20);
+}
+
+.box {
+  background: var(--sand);
+  color: var(--ink);
+  padding: calc(var(--u) * 20) calc(var(--u) * 20) calc(var(--u) * 60);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 34);
+  line-height: calc(var(--u) * 42);
+}
+
+.section {
+  margin-top: calc(var(--u) * 40);
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 24);
+  line-height: 1.25;
+}
+
+.sectionText,
+.desc,
+.price,
+.variant {
+  font-size: calc(var(--u) * 16);
+  line-height: 1.4;
+}
+
+.sectionText {
+  margin-top: calc(var(--u) * 4);
+}
+
+.items {
+  margin-top: calc(var(--u) * 20);
+}
+
+.item {
+  border-top: 1px solid rgba(32, 36, 26, 0.7);
+  padding: calc(var(--u) * 16) 0 calc(var(--u) * 11.6);
+}
+
+.item + .item {
+  margin-top: calc(var(--u) * 8);
+}
+
+.name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: calc(var(--u) * 16);
+  line-height: 1.25;
+}
+
+.desc {
+  margin-top: calc(var(--u) * 12);
+}
+
+.price,
+.variants {
+  margin-top: calc(var(--u) * 12);
+}
+
+.variant {
+  display: flex;
+  justify-content: space-between;
+  color: var(--sage);
+}
+
+.variant + .variant {
+  margin-top: calc(var(--u) * 2.6);
+}
+
+@media (min-width: 768px) {
+  .page {
+    background: transparent;
+    padding: calc(var(--u) * 70) 0 0;
+  }
+
+  .box {
+    width: max(calc(var(--u) * 980), calc(100% - var(--u) * 160));
+    margin: 0 auto;
+    padding: calc(var(--u) * 80) calc(var(--u) * 80) calc(var(--u) * 81);
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: calc(var(--u) * 44);
+    line-height: 1.25;
+  }
+
+  .section + .section {
+    margin-top: calc(var(--u) * 91);
+  }
+
+  .items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: calc(var(--u) * 104);
+    row-gap: calc(var(--u) * 40);
+  }
+
+  .item {
+    border-top: 0;
+    padding: 0 0 calc(var(--u) * 11.6);
+  }
+
+  .item + .item {
+    margin-top: 0;
+  }
+
+  .price,
+  .variants {
+    margin-top: calc(var(--u) * 13);
+  }
+
+  .variant {
+    justify-content: flex-start;
+    gap: calc(var(--u) * 6);
+  }
+
+  .variant + .variant {
+    margin-top: calc(var(--u) * 1.6);
+  }
+}

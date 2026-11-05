@@ -27,6 +27,18 @@ export function Gallery({ images, className }: GalleryProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Lock page scroll while the expand view is open.
+  useEffect(() => {
+    if (!isOpen) return;
+    const root = document.documentElement;
+    const previous = root.style.overflow;
+    root.style.overflow = "hidden";
+    return () => {
+      root.style.overflow = previous;
+    };
+  }, [isOpen]);
 
   const scrollToIndex = useCallback((next: number, behavior: ScrollBehavior) => {
     const track = trackRef.current;
@@ -41,7 +53,7 @@ export function Gallery({ images, className }: GalleryProps) {
     if (!dialog) return;
     setIndex(next);
     dialog.showModal();
-    document.documentElement.style.overflow = "hidden";
+    setIsOpen(true);
     requestAnimationFrame(() => {
       scrollToIndex(next, "instant");
       setVisible(true);
@@ -52,7 +64,7 @@ export function Gallery({ images, className }: GalleryProps) {
     setVisible(false);
     window.setTimeout(() => {
       dialogRef.current?.close();
-      document.documentElement.style.overflow = "";
+      setIsOpen(false);
     }, 300);
   }, []);
 

@@ -1,0 +1,269 @@
+.page {
+  position: relative;
+  display: flow-root;
+  color: var(--white);
+  font-family: var(--font-georgia);
+}
+
+.main {
+  width: calc(280 * var(--u));
+  margin: 0 auto;
+  padding: calc(30 * var(--u)) 0 calc(40 * var(--u));
+}
+
+.mobileTopCheckout {
+  margin-bottom: calc(10 * var(--u));
+}
+
+.head {
+  padding: calc(15 * var(--u)) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.headline {
+  margin: 0;
+  font-size: calc(20 * var(--u));
+  line-height: calc(28 * var(--u));
+  font-weight: 400;
+}
+
+.empty {
+  padding: calc(110 * var(--u)) 0;
+  text-align: center;
+}
+
+.emptyTitle {
+  margin: 0 0 calc(15 * var(--u));
+  font-size: calc(22 * var(--u));
+  line-height: calc(24.2 * var(--u));
+  font-weight: 400;
+}
+
+.continue {
+  font-size: calc(15 * var(--u));
+  line-height: calc(21 * var(--u));
+  color: var(--white);
+  text-decoration: underline;
+}
+
+.lines {
+  margin: 0;
+  padding: 0;
+}
+
+.extras {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--u));
+  padding: calc(24 * var(--u)) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.noteToggle {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-georgia);
+  font-size: calc(14 * var(--u));
+  line-height: calc(22 * var(--u));
+  cursor: pointer;
+}
+
+.noteIcon {
+  width: calc(20 * var(--u));
+  height: calc(20 * var(--u));
+  margin-right: calc(6 * var(--u));
+}
+
+.noteInput {
+  display: block;
+  width: 100%;
+  height: calc(80 * var(--u));
+  margin-top: calc(10 * var(--u));
+  padding: calc(8 * var(--u));
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: transparent;
+  color: var(--white);
+  font-family: var(--font-georgia);
+  font-size: calc(14 * var(--u));
+  resize: none;
+}
+
+.summary {
+  margin-top: calc(20 * var(--u));
+}
+
+.summaryTitle {
+  display: none;
+}
+
+.rows {
+  margin: 0;
+  padding-bottom: calc(12 * var(--u));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: calc(14 * var(--u));
+  line-height: calc(28.8 * var(--u));
+}
+
+.row dt,
+.row dd {
+  margin: 0;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  padding: calc(14 * var(--u)) 0 calc(16 * var(--u));
+  font-size: calc(18 * var(--u));
+  line-height: calc(32 * var(--u));
+}
+
+.checkout {
+  display: block;
+  width: 100%;
+  height: calc(40 * var(--u));
+  border: 0;
+  background: var(--gold);
+  color: var(--charcoal);
+  font-family: var(--font-georgia);
+  font-size: calc(14 * var(--u));
+  line-height: calc(21 * var(--u));
+  cursor: pointer;
+}
+
+.checkout:hover {
+  background: #bba872;
+}
+
+.secure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: calc(12 * var(--u)) 0 0;
+  font-family: Helvetica, sans-serif;
+  font-size: calc(14 * var(--u));
+  line-height: calc(22.4 * var(--u));
+}
+
+.lock {
+  width: 11px;
+  height: 14px;
+}
+
+@media (min-width: 980px) {
+  .main {
+    display: grid;
+    grid-template-columns: 608px 280px;
+    column-gap: 52px;
+    align-items: start;
+    width: 980px;
+    padding: 45px 20px 40px;
+  }
+
+  .main[data-empty] {
+    display: block;
+  }
+
+  .mobileTopCheckout {
+    display: none;
+  }
+
+  .head {
+    padding: 20px 0;
+  }
+
+  .headline {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .empty {
+    padding: 175px 0;
+  }
+
+  .emptyTitle {
+    margin-bottom: 15px;
+    font-size: 22px;
+    line-height: 24.2px;
+  }
+
+  .continue {
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .extras {
+    gap: 12px;
+    padding: 34px 0 24px;
+    border-bottom: 0;
+  }
+
+  .noteToggle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .noteIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+
+  .noteInput {
+    height: 90px;
+    font-size: 16px;
+  }
+
+  .summary {
+    margin: 0;
+  }
+
+  .summaryTitle {
+    display: block;
+    margin: 0;
+    padding: 20px 0 21px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+
+  .rows {
+    padding: 19px 0 14px;
+  }
+
+  .row {
+    font-size: 16px;
+    line-height: 28.8px;
+  }
+
+  .row + .row {
+    margin-top: 11px;
+  }
+
+  .total {
+    padding: 13px 0 20px;
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .checkout {
+    height: 42px;
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .secure {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+}

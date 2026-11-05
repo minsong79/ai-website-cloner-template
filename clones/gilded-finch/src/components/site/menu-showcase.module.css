@@ -24,6 +24,7 @@
   grid-template-columns: minmax(0, 1fr);
   row-gap: 40px;
   margin-top: 40px;
+  padding-bottom: 40px;
 }
 
 .section {
@@ -79,6 +80,7 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 60px;
     align-items: start;
+    padding-bottom: 0;
   }
 
   .item {
