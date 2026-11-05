@@ -20,7 +20,6 @@ export function ContactMap() {
         className={styles.frame}
         src={MAP_SRC}
         title="Google Map: Asphalt Bloom Cafe, 500 Terry Francine St, San Francisco"
-        loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         allowFullScreen
       />

@@ -33,14 +33,15 @@ export default function TermsPage() {
             by you, as the owner of this website. The T&amp;C set forth the legal boundaries governing the
             activities of the website visitors, or your customers, while they visit or engage with this
             website. The T&amp;C are meant to establish the legal relationship between the site visitors
-            and you as the website owner.
+            and you as the website owner.&nbsp;
           </p>
           <p>&nbsp;</p>
           <p>
             T&amp;C should be defined according to the specific needs and nature of each website. For
             example, a website offering products to customers in e-commerce transactions requires T&amp;C
             that are different from the T&amp;C of a website only providing information (like a blog, a
-            landing page, and so on).
+            landing page, and so
+            on).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <p>&nbsp;</p>
           <p>
@@ -57,7 +58,7 @@ export default function TermsPage() {
             website; the possible payment methods; a declaration that the website owner may change his or
             her offering in the future; the types of warranties the website owner gives his or her
             customers; a reference to issues of intellectual property or copyrights, where relevant; the
-            website owner’s right to suspend or cancel a member’s account; and much, much more.
+            website owner’s right to suspend or cancel a member’s account; and much, much more.&nbsp;
           </p>
           <p>&nbsp;</p>
           <p>
