@@ -22,3 +22,6 @@ next-env.d.ts
 
 # Vercel
 .vercel
+
+# Commercial webfonts fetched locally by `npm run fetch-fonts` (not redistributable)
+public/assets/fonts/licensed/

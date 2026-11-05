@@ -1,0 +1,52 @@
+/* Wix app widgets use fixed pixel type; only the widths follow the page scale. */
+.root {
+  padding: 60px 20px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0;
+  padding: 20px 0 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px 12px;
+  text-align: center;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.description,
+.price {
+  font-size: 15px;
+  line-height: 18.75px;
+}
+
+@media (min-width: 1024px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .item {
+    padding: 20px 0 32px;
+  }
+
+  .description {
+    max-width: 75.4%;
+  }
+}

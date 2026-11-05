@@ -1,0 +1,626 @@
+/*
+ * Home page. Every section is a fixed-ratio Wix Studio stage, so children are
+ * placed absolutely in design px (--u): 390-wide mobile first, 1440-wide
+ * desktop from 1024px. Values are the source's measured layout boxes.
+ */
+.stage {
+  position: relative;
+}
+
+.stage > * {
+  position: absolute;
+  margin: 0;
+}
+
+.cover {
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.contain {
+  object-fit: contain;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  --tex-pos: 52.1% 10.8%;
+  --tex-opacity: 0.27;
+  height: calc(1113.1 * var(--u));
+}
+
+.heroImgA,
+.heroImgB {
+  left: calc(24 * var(--u));
+  width: calc(342 * var(--u));
+  height: calc(300 * var(--u));
+}
+
+.heroImgA {
+  top: calc(117.5 * var(--u));
+}
+
+.heroImgB {
+  top: calc(786.4 * var(--u));
+}
+
+.heroTitle {
+  left: calc(24 * var(--u));
+  top: calc(513.7 * var(--u));
+  width: calc(342 * var(--u));
+  letter-spacing: -0.0325em;
+}
+
+.heroText {
+  left: calc(24 * var(--u));
+  top: calc(549.9 * var(--u));
+  width: calc(342 * var(--u));
+}
+
+.heroBtn {
+  left: calc(102.5 * var(--u));
+  top: calc(641.9 * var(--u));
+  width: calc(185 * var(--u));
+  height: calc(41.5 * var(--u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(6 * var(--u));
+  border: 2px solid var(--c-orange);
+  background: var(--c-bg);
+  color: #fff;
+  font-family: var(--f-mono);
+  font-size: calc(16 * var(--u));
+  line-height: 1.25;
+  text-transform: uppercase;
+  transition: border 0.4s;
+}
+
+.heroBtn:hover,
+.heroBtn:focus-visible {
+  text-decoration: underline;
+}
+
+/* ---------- More than a cafe ---------- */
+.mindset {
+  height: calc(470.6 * var(--u));
+}
+
+.mindsetTitle {
+  left: calc(24 * var(--u));
+  top: calc(106.8 * var(--u));
+  width: calc(342 * var(--u));
+}
+
+.mindsetText {
+  left: calc(18.3 * var(--u));
+  top: calc(257.4 * var(--u));
+  width: calc(351.3 * var(--u));
+}
+
+.croissant {
+  left: calc(34 * var(--u));
+  top: calc(138.1 * var(--u));
+  width: calc(64.6 * var(--u));
+  height: calc(43.5 * var(--u));
+  --rot: 0deg;
+}
+
+.moka {
+  left: calc(283.9 * var(--u));
+  top: calc(60.5 * var(--u));
+  width: calc(82.2 * var(--u));
+  height: calc(55.3 * var(--u));
+  --rot: 4deg;
+}
+
+.doodle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  rotate: var(--rot);
+}
+
+/* ---------- Full-width interior photo ---------- */
+.interior {
+  position: relative;
+  height: calc(445 * var(--u));
+  background: var(--c-bg) url("/assets/images/cafe-interior.jpg") 50% 50% / cover no-repeat;
+}
+
+/* ---------- Signature creations ---------- */
+.signature {
+  --tex-pos: 50.8% 80.7%;
+  height: calc(1688.7 * var(--u));
+}
+
+.hearts {
+  left: calc(158.5 * var(--u));
+  top: calc(60 * var(--u));
+  width: calc(73 * var(--u));
+  height: calc(72 * var(--u));
+  --rot: 0deg;
+  rotate: var(--rot);
+}
+
+.signatureTitle {
+  left: calc(24 * var(--u));
+  top: calc(144.9 * var(--u));
+  width: calc(342 * var(--u));
+  letter-spacing: -0.035em;
+}
+
+.signatureText {
+  left: calc(40.7 * var(--u));
+  top: calc(211.6 * var(--u));
+  width: calc(308.6 * var(--u));
+}
+
+.card {
+  left: calc(24 * var(--u));
+  width: calc(342 * var(--u));
+  background: var(--c-card);
+}
+
+.card > * {
+  position: absolute;
+  margin: 0;
+  left: calc(24 * var(--u));
+  width: calc(294 * var(--u));
+}
+
+.cardImg {
+  top: calc(24 * var(--u));
+  height: calc(260.5 * var(--u));
+}
+
+.cardTitle {
+  top: calc(314.1 * var(--u));
+}
+
+.cardText {
+  top: calc(350.3 * var(--u));
+}
+
+.card1 {
+  top: calc(344.4 * var(--u));
+  height: calc(439.5 * var(--u));
+}
+
+.card1 .cardImg {
+  height: calc(262.8 * var(--u));
+}
+
+.card1 .cardTitle {
+  top: calc(316.4 * var(--u));
+}
+
+.card1 .cardText {
+  top: calc(352.6 * var(--u));
+}
+
+.card2 {
+  top: calc(807.9 * var(--u));
+  height: calc(437.2 * var(--u));
+}
+
+.card3 {
+  top: calc(1269 * var(--u));
+  height: calc(419.7 * var(--u));
+}
+
+/* ---------- Find your corner ---------- */
+.corner {
+  --tex-pos: 50% 62.9%;
+  height: calc(646 * var(--u));
+}
+
+.cornerTitle {
+  left: calc(24 * var(--u));
+  top: calc(78.5 * var(--u));
+  width: calc(342 * var(--u));
+}
+
+.cornerImg {
+  left: calc(48 * var(--u));
+  top: calc(147.4 * var(--u));
+  width: calc(294.1 * var(--u));
+  height: calc(266.5 * var(--u));
+}
+
+.cornerText {
+  left: calc(52 * var(--u));
+  top: calc(467.5 * var(--u));
+  width: calc(285.9 * var(--u));
+}
+
+/* ---------- From the street ---------- */
+.street {
+  --tex-pos: 44.5% 27.5%;
+  height: calc(1277.5 * var(--u));
+  overflow: clip;
+}
+
+.streetTitle {
+  left: calc(24 * var(--u));
+  top: calc(47.2 * var(--u));
+  width: calc(342 * var(--u));
+  text-align: center;
+}
+
+.bubble {
+  pointer-events: none;
+}
+
+.bubble img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bubbleB {
+  left: calc(-69.4 * var(--u));
+  top: calc(142.2 * var(--u));
+  width: calc(507.3 * var(--u));
+  height: calc(343.8 * var(--u));
+  rotate: 0deg;
+}
+
+.bubbleA {
+  left: calc(-36.4 * var(--u));
+  top: calc(496.6 * var(--u));
+  width: calc(476.3 * var(--u));
+  height: calc(334.2 * var(--u));
+  rotate: -11deg;
+}
+
+.bubbleC {
+  left: calc(-107.3 * var(--u));
+  top: calc(871.8 * var(--u));
+  width: calc(604.6 * var(--u));
+  height: calc(324.8 * var(--u));
+  rotate: 0deg;
+}
+
+.star {
+  --rot: 0deg;
+  object-fit: contain;
+  rotate: var(--rot);
+}
+
+.star1 {
+  left: calc(178.2 * var(--u));
+  top: calc(185.3 * var(--u));
+  width: calc(45.9 * var(--u));
+  height: calc(29 * var(--u));
+}
+
+.starA {
+  left: calc(184.3 * var(--u));
+  top: calc(541.4 * var(--u));
+  width: calc(27.7 * var(--u));
+  height: calc(33.4 * var(--u));
+}
+
+.starC {
+  left: calc(191.5 * var(--u));
+  top: calc(906.6 * var(--u));
+  width: calc(20.4 * var(--u));
+  height: calc(38.4 * var(--u));
+}
+
+.quote,
+.name {
+  text-align: center;
+}
+
+.quote1,
+.name1,
+.name2,
+.quote3,
+.name3 {
+  left: calc(24 * var(--u));
+  width: calc(342 * var(--u));
+}
+
+.quote1 {
+  top: calc(250.2 * var(--u));
+}
+
+.name1 {
+  top: calc(358.9 * var(--u));
+}
+
+.quote2 {
+  left: calc(38.5 * var(--u));
+  top: calc(620.1 * var(--u));
+  width: calc(318.5 * var(--u));
+}
+
+.name2 {
+  top: calc(702.7 * var(--u));
+}
+
+.quote3 {
+  top: calc(961.4 * var(--u));
+}
+
+.name3 {
+  top: calc(1045.9 * var(--u));
+}
+
+/* ======================= Desktop (>= 1024px) ======================= */
+@media (min-width: 1024px) {
+  .hero {
+    height: calc(827.9 * var(--u));
+  }
+
+  .heroImgA {
+    left: calc(23 * var(--u));
+    top: calc(261 * var(--u));
+    width: calc(449.7 * var(--u));
+    height: calc(556 * var(--u));
+  }
+
+  .heroImgB {
+    left: calc(967.9 * var(--u));
+    top: calc(260.2 * var(--u));
+    width: calc(449.2 * var(--u));
+    height: calc(558.3 * var(--u));
+  }
+
+  .heroTitle {
+    left: calc(530.3 * var(--u));
+    top: calc(447.5 * var(--u));
+    width: calc(379.3 * var(--u));
+  }
+
+  .heroText {
+    left: calc(518.8 * var(--u));
+    top: calc(505.3 * var(--u));
+    width: calc(402.2 * var(--u));
+  }
+
+  .heroBtn {
+    left: calc(614.7 * var(--u));
+    top: calc(602.9 * var(--u));
+    width: calc(210.7 * var(--u));
+    height: calc(45.4 * var(--u));
+    padding: calc(6.75 * var(--u));
+    font-size: calc(16.875 * var(--u));
+  }
+
+  .mindset {
+    height: calc(846.8 * var(--u));
+  }
+
+  .mindsetTitle {
+    left: calc(328.2 * var(--u));
+    top: calc(209.1 * var(--u));
+    width: calc(783.5 * var(--u));
+  }
+
+  .mindsetText {
+    left: calc(332.5 * var(--u));
+    top: calc(523.2 * var(--u));
+    width: calc(775 * var(--u));
+  }
+
+  .croissant {
+    left: calc(292 * var(--u));
+    top: calc(288.4 * var(--u));
+    width: calc(72.9 * var(--u));
+    height: calc(45.5 * var(--u));
+    --rot: 16deg;
+  }
+
+  .moka {
+    left: calc(1058.1 * var(--u));
+    top: calc(242.1 * var(--u));
+    width: calc(121.8 * var(--u));
+    height: calc(55.4 * var(--u));
+    --rot: 10deg;
+  }
+
+  .interior {
+    height: calc(910.1 * var(--u));
+  }
+
+  .signature {
+    height: calc(1407.1 * var(--u));
+  }
+
+  .hearts {
+    left: calc(585.7 * var(--u));
+    top: calc(181.2 * var(--u));
+    width: calc(72.9 * var(--u));
+    height: calc(78.6 * var(--u));
+    --rot: -20deg;
+  }
+
+  .signatureTitle {
+    left: calc(323.3 * var(--u));
+    top: calc(202.5 * var(--u));
+    width: calc(794.3 * var(--u));
+  }
+
+  .signatureText {
+    left: calc(529.3 * var(--u));
+    top: calc(463.2 * var(--u));
+    width: calc(381.3 * var(--u));
+  }
+
+  .card {
+    width: calc(398.9 * var(--u));
+  }
+
+  .card > *,
+  .card1 .cardTitle,
+  .card1 .cardText {
+    left: calc(22.2 * var(--u));
+    width: calc(330.3 * var(--u));
+  }
+
+  .card .cardImg,
+  .card1 .cardImg {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: calc(398.8 * var(--u));
+  }
+
+  .card .cardTitle,
+  .card1 .cardTitle {
+    top: calc(421.2 * var(--u));
+  }
+
+  .card .cardText,
+  .card1 .cardText {
+    top: calc(479 * var(--u));
+  }
+
+  .card1 {
+    left: calc(63 * var(--u));
+    top: calc(610.1 * var(--u));
+    width: calc(397.7 * var(--u));
+    height: calc(568.7 * var(--u));
+  }
+
+  .card2 {
+    left: calc(519.7 * var(--u));
+    top: calc(747.5 * var(--u));
+    height: calc(568.9 * var(--u));
+  }
+
+  .card3 {
+    left: calc(978.3 * var(--u));
+    top: calc(678.9 * var(--u));
+    height: calc(568.8 * var(--u));
+  }
+
+  .card3 .cardText {
+    width: calc(315.6 * var(--u));
+  }
+
+  .corner {
+    height: calc(865.4 * var(--u));
+  }
+
+  .cornerTitle {
+    left: calc(590.6 * var(--u));
+    top: calc(76.2 * var(--u));
+    width: calc(258.8 * var(--u));
+  }
+
+  .cornerImg {
+    left: calc(435.4 * var(--u));
+    top: calc(189.7 * var(--u));
+    width: calc(569.4 * var(--u));
+    height: calc(398.6 * var(--u));
+  }
+
+  .cornerText {
+    left: calc(469.5 * var(--u));
+    top: calc(668 * var(--u));
+    width: calc(502.4 * var(--u));
+  }
+
+  .street {
+    height: calc(1217.8 * var(--u));
+  }
+
+  .streetTitle {
+    left: calc(23.3 * var(--u));
+    top: calc(61 * var(--u));
+    width: calc(603.5 * var(--u));
+    text-align: start;
+  }
+
+  .bubbleB {
+    left: calc(531 * var(--u));
+    top: calc(190.9 * var(--u));
+    width: calc(743.5 * var(--u));
+    height: calc(491.3 * var(--u));
+    rotate: -6deg;
+  }
+
+  .bubbleA {
+    left: calc(7.4 * var(--u));
+    top: calc(549.4 * var(--u));
+    width: calc(677.4 * var(--u));
+    height: calc(456.6 * var(--u));
+    rotate: -10deg;
+  }
+
+  .bubbleC {
+    left: calc(632.9 * var(--u));
+    top: calc(724.7 * var(--u));
+    width: calc(785.5 * var(--u));
+    height: calc(421.6 * var(--u));
+    rotate: 4deg;
+  }
+
+  .star {
+    --rot: 6deg;
+    width: calc(38.7 * var(--u));
+    height: calc(34.2 * var(--u));
+  }
+
+  .star1 {
+    left: calc(878.8 * var(--u));
+    top: calc(260.3 * var(--u));
+  }
+
+  .starA {
+    left: calc(340.4 * var(--u));
+    top: calc(604 * var(--u));
+  }
+
+  .starC {
+    left: calc(1021.1 * var(--u));
+    top: calc(799.9 * var(--u));
+  }
+
+  .quote {
+    text-align: start;
+  }
+
+  .name {
+    text-align: end;
+  }
+
+  .quote1 {
+    left: calc(651.2 * var(--u));
+    top: calc(352.9 * var(--u));
+    width: calc(529.9 * var(--u));
+  }
+
+  .name1 {
+    left: calc(708 * var(--u));
+    top: calc(508.4 * var(--u));
+    width: calc(404.3 * var(--u));
+  }
+
+  .quote2 {
+    left: calc(113.2 * var(--u));
+    top: calc(692.7 * var(--u));
+    width: calc(469.1 * var(--u));
+  }
+
+  .name2 {
+    left: calc(180.4 * var(--u));
+    top: calc(855.2 * var(--u));
+    width: calc(358.8 * var(--u));
+  }
+
+  .quote3 {
+    left: calc(735.2 * var(--u));
+    top: calc(868.9 * var(--u));
+    width: calc(548.6 * var(--u));
+  }
+
+  .name3 {
+    left: calc(915 * var(--u));
+    top: calc(987.6 * var(--u));
+    width: calc(358.8 * var(--u));
+  }
+}

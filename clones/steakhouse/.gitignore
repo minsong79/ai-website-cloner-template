@@ -22,3 +22,6 @@ next-env.d.ts
 
 # Vercel
 .vercel
+
+# Commercial fonts licensed to Wix; fetched locally by `npm run fetch-fonts`
+public/assets/fonts/licensed/

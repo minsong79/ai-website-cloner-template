@@ -1,0 +1,77 @@
+.section {
+  height: calc(var(--h-m) * var(--u));
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.dark {
+  background: #1d1d1d;
+  color: var(--cream);
+}
+
+.stage {
+  height: 100%;
+}
+
+.block {
+  position: absolute;
+  left: calc(100% * 24 / 390);
+  top: calc(var(--top-m) * var(--u));
+  width: calc(100% * 342 / 390);
+  font-size: calc(16 * var(--u));
+  line-height: 1.25em;
+}
+
+.block h1 {
+  margin: 0;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: calc(28 * var(--u));
+  line-height: 1em;
+}
+
+.block h2 {
+  margin: 0;
+  font-weight: 500;
+  font-size: calc(24 * var(--u));
+  line-height: 1em;
+}
+
+.block p {
+  margin: 0;
+}
+
+.block em {
+  font-style: italic;
+}
+
+.block a {
+  text-decoration: underline;
+}
+
+.block ul {
+  margin: 0 0 0 0.5em;
+  padding: 0 0 0 1.3em;
+  list-style: disc;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    height: calc(var(--h-d) * var(--u));
+  }
+
+  .block {
+    left: calc(50.1 * var(--u));
+    top: calc(var(--top-d) * var(--u));
+    width: calc(var(--w-d) * var(--u));
+    font-size: calc(15 * var(--u));
+  }
+
+  .block h1 {
+    font-size: calc(52 * var(--u));
+  }
+
+  .block h2 {
+    font-size: calc(32 * var(--u));
+  }
+}

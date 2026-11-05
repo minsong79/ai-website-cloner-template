@@ -1,0 +1,89 @@
+/* Wix app widget: fixed pixel typography and spacing, fluid widths. */
+.root {
+  padding: 20px;
+  background: var(--cream);
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 44px;
+}
+
+.description {
+  margin: 4px 0 0;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 40px;
+  margin-top: 40px;
+}
+
+.section {
+  min-width: 0;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.divider,
+.dividerItem {
+  height: 0;
+  margin: 8px 0;
+  border: 0;
+  border-top: 1px solid rgba(29, 29, 29, 0.3);
+}
+
+.divider {
+  margin-top: 20px;
+}
+
+.items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 0 12px;
+}
+
+.itemName {
+  font-size: 15px;
+  line-height: 18.75px;
+}
+
+.itemPrice {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+@media (min-width: 1024px) {
+  .sections {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 60px;
+    align-items: start;
+  }
+
+  .item {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}

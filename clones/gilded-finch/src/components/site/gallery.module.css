@@ -1,0 +1,155 @@
+/* Mobile: one 306-unit square visible, swipe for the rest (scroll snap). */
+.strip {
+  overflow: hidden;
+}
+
+.scroller {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.list {
+  display: flex;
+  gap: 20px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  position: relative;
+  flex: 0 0 calc(306 * var(--u));
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+.link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.thumb {
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .scroller {
+    overflow: visible;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: calc(6 * var(--u));
+  }
+}
+
+/* Expand view */
+.dialog {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dialog::backdrop {
+  background: transparent;
+}
+
+.dialogVisible {
+  opacity: 1;
+}
+
+.expanded {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+}
+
+.close,
+.nav {
+  position: absolute;
+  z-index: 2;
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.close {
+  top: 40px;
+  right: 40px;
+}
+
+.nav {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 40px;
+}
+
+.next {
+  right: 40px;
+}
+
+.icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: #000;
+}
+
+.track {
+  position: absolute;
+  top: 77px;
+  right: 0;
+  bottom: 40px;
+  left: 0;
+  display: flex;
+  gap: 100px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior: contain;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+}
+
+.full {
+  object-fit: contain;
+}

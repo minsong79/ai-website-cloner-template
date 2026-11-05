@@ -1,0 +1,103 @@
+.root {
+  overflow: hidden;
+  color: var(--lemon);
+}
+
+.slides {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slide {
+  position: relative;
+  grid-area: 1 / 1;
+  padding: calc(24 * var(--u)) 0 calc(24 * var(--u));
+  opacity: 0;
+  text-align: center;
+}
+
+.active,
+.enter,
+.exit {
+  opacity: 1;
+}
+
+.enter {
+  z-index: 2;
+  animation: slide-in-from-bottom 3s ease both;
+}
+
+.exit {
+  z-index: 1;
+  animation: slide-out-to-top 3s ease forwards;
+}
+
+.quote {
+  width: calc(100% * 299.9 / 342);
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: calc(20 * var(--u));
+  line-height: 1em;
+  letter-spacing: -0.05em;
+}
+
+.slide:first-child .quote {
+  width: 100%;
+}
+
+.name {
+  width: calc(100% * 299.9 / 342);
+  margin: calc(12 * var(--u)) auto 0;
+  font-weight: 500;
+  font-size: calc(16 * var(--u));
+  line-height: 1.25em;
+  letter-spacing: -0.05em;
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out-to-top {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .slide {
+    padding: 0;
+  }
+
+  .quote,
+  .slide:first-child .quote,
+  .name {
+    position: absolute;
+    width: calc(672.8 * var(--u));
+    margin: 0;
+  }
+
+  .quote {
+    left: calc(284.9 * var(--u));
+    top: calc(491.2 * var(--u));
+    font-size: calc(24 * var(--u));
+  }
+
+  .name {
+    left: calc(285.9 * var(--u));
+    top: calc(561.2 * var(--u));
+    font-size: calc(15 * var(--u));
+  }
+}

@@ -1,0 +1,444 @@
+/*
+ * Home page. Mobile first: horizontal values are % of the 390px design width,
+ * vertical values use --u (390-based, capped at 700px). Desktop (>= 1024px) uses
+ * --u everywhere (1280-based, capped at 1920px). Numbers are measured from the source.
+ */
+.stage {
+  height: 100%;
+}
+
+.cover {
+  object-fit: cover;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  height: calc(608 * var(--u));
+  overflow: hidden;
+  background: #111;
+}
+
+.heroVideo {
+  object-position: 28% 50%;
+}
+
+.heroTitle {
+  left: calc(100% * 24 / 390);
+  top: calc(353 * var(--u));
+  width: calc(100% * 284 / 390);
+  margin: 0;
+  color: var(--cream);
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: calc(26 * var(--u));
+  line-height: 1em;
+  letter-spacing: -0.05em;
+}
+
+.heroText {
+  left: calc(100% * 24 / 390);
+  top: calc(411.7 * var(--u));
+  width: calc(100% * 205.1 / 390);
+  margin: 0;
+  color: var(--cream);
+  font-size: calc(16 * var(--u));
+  line-height: 1.25em;
+}
+
+.heroButton {
+  left: calc(100% * 24 / 390);
+  top: calc(503.6 * var(--u));
+  width: calc(100% * 139.5 / 390);
+  height: calc(41.5 * var(--u));
+}
+
+/* ---------- About collage ---------- */
+.about {
+  height: calc(1094.5 * var(--u));
+  background: var(--cream);
+}
+
+.barTable {
+  left: calc(100% * 24 / 390);
+  top: calc(156.5 * var(--u));
+  width: calc(100% * 187.5 / 390);
+  height: calc(164.5 * var(--u));
+}
+
+.aboutTitle {
+  left: calc(100% * 101.2 / 390);
+  top: calc(35.5 * var(--u));
+  width: calc(100% * 187.5 / 390);
+  margin: 0;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: calc(34 * var(--u));
+  line-height: 0.75em;
+  letter-spacing: -0.1em;
+  text-align: center;
+}
+
+.bottle {
+  left: calc(100% * 138.3 / 390);
+  top: calc(293.4 * var(--u));
+  width: calc(100% * 113.3 / 390);
+  height: calc(270.1 * var(--u));
+}
+
+.street {
+  left: calc(100% * 17 / 390);
+  top: calc(743.4 * var(--u));
+  width: calc(100% * 153.8 / 390);
+  height: calc(134.9 * var(--u));
+}
+
+.story {
+  left: calc(100% * 24 / 390);
+  top: calc(969.9 * var(--u));
+  width: calc(100% * 342 / 390);
+  margin: 0;
+  font-size: calc(16 * var(--u));
+  line-height: 1.25em;
+  text-align: center;
+}
+
+.pour {
+  left: calc(100% * 212.2 / 390);
+  top: calc(563.5 * var(--u));
+  width: calc(100% * 153.8 / 390);
+  height: calc(134.9 * var(--u));
+}
+
+.lime {
+  left: calc(100% * 22 / 390);
+  top: calc(344.4 * var(--u));
+  width: calc(100% * 59.9 / 390);
+  height: calc(69.5 * var(--u));
+}
+
+.face {
+  left: calc(100% * 251.7 / 390);
+  top: calc(810.8 * var(--u));
+  width: calc(100% * 110.6 / 390);
+  height: calc(135 * var(--u));
+}
+
+/* ---------- Menu teaser ---------- */
+.teaser {
+  background: var(--cream);
+}
+
+.teaserStage {
+  padding: calc(24 * var(--u)) calc(100% * 24 / 390);
+}
+
+.paper {
+  position: relative;
+  display: flow-root;
+  min-height: calc(700.2 * var(--u));
+  padding-bottom: calc(24 * var(--u));
+  overflow: hidden;
+  background: var(--shade);
+}
+
+.paper > * {
+  position: relative;
+}
+
+.paper > img {
+  position: absolute;
+}
+
+.teaserTitle {
+  width: calc(100% * 299.9 / 342);
+  margin: calc(51.9 * var(--u)) 0 0 calc(100% * 21 / 342);
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: calc(28 * var(--u));
+  line-height: 1em;
+  text-align: center;
+}
+
+.teaserMenu {
+  width: 100%;
+  margin-top: calc(-26.6 * var(--u));
+}
+
+.teaserButton {
+  width: calc(100% * 167.2 / 342);
+  height: calc(41.5 * var(--u));
+  margin: calc(-20.8 * var(--u)) 0 0 calc(100% * 87.4 / 342);
+}
+
+/* ---------- Events ---------- */
+.events {
+  height: calc(329.8 * var(--u));
+  background: var(--cream);
+}
+
+.eventsTitle {
+  left: calc(100% * 24 / 390);
+  top: calc(69.9 * var(--u));
+  width: calc(100% * 296.1 / 390);
+  margin: 0;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: calc(34 * var(--u));
+  line-height: 0.75em;
+  letter-spacing: -0.1em;
+}
+
+.eventsLead,
+.eventsText {
+  left: calc(100% * 24 / 390);
+  margin: 0;
+  font-size: calc(16 * var(--u));
+  line-height: 1.25em;
+  letter-spacing: -0.02em;
+}
+
+.eventsLead {
+  top: calc(151.8 * var(--u));
+  width: calc(100% * 322 / 390);
+  font-weight: 700;
+}
+
+.eventsText {
+  top: calc(182.8 * var(--u));
+  width: calc(100% * 305 / 390);
+  font-weight: 400;
+}
+
+/* ---------- Margaritas + gallery ---------- */
+.gallerySection {
+  height: calc(630.4 * var(--u));
+  background: var(--cream);
+}
+
+.margaritaOne {
+  left: calc(100% * 156.6 / 390);
+  top: calc(60.8 * var(--u));
+  width: calc(100% * 149.1 / 390);
+  height: calc(163.8 * var(--u));
+}
+
+.margaritaTwo {
+  left: calc(100% * 81.5 / 390);
+  top: calc(91.6 * var(--u));
+  width: calc(100% * 131.8 / 390);
+  height: calc(144.8 * var(--u));
+}
+
+.gallery {
+  left: calc(100% * 48 / 390);
+  top: calc(278.4 * var(--u));
+  width: calc(100% * 294 / 390);
+  height: calc(306 * var(--u));
+}
+
+/* ---------- Testimonials ---------- */
+.testimonials {
+  height: calc(560 * var(--u));
+  overflow: hidden;
+  background: #2a2617;
+}
+
+.slideshow {
+  left: calc(100% * 24 / 390);
+  top: calc(200 * var(--u));
+  width: calc(100% * 342 / 390);
+}
+
+/* ================= Desktop ================= */
+@media (min-width: 1024px) {
+  .hero {
+    height: calc(645.7 * var(--u));
+  }
+
+  .heroVideo {
+    object-position: 50% 0%;
+  }
+
+  .heroTitle {
+    left: calc(24.6 * var(--u));
+    top: calc(318.6 * var(--u));
+    width: calc(402.9 * var(--u));
+    font-size: calc(44 * var(--u));
+  }
+
+  .heroText {
+    left: calc(23.6 * var(--u));
+    top: calc(416.9 * var(--u));
+    width: calc(294.1 * var(--u));
+    font-size: calc(15 * var(--u));
+  }
+
+  .heroButton {
+    left: calc(23.6 * var(--u));
+    top: calc(488.6 * var(--u));
+    width: calc(139.5 * var(--u));
+    height: calc(42 * var(--u));
+  }
+
+  .about {
+    height: calc(1694.4 * var(--u));
+  }
+
+  .barTable {
+    left: calc(24.4 * var(--u));
+    top: calc(64.9 * var(--u));
+    width: calc(337 * var(--u));
+    height: calc(450 * var(--u));
+  }
+
+  .aboutTitle {
+    left: calc(444.4 * var(--u));
+    top: calc(99.6 * var(--u));
+    width: calc(391.2 * var(--u));
+    font-size: calc(84 * var(--u));
+  }
+
+  .bottle {
+    left: calc(519.9 * var(--u));
+    top: calc(652.7 * var(--u));
+    width: calc(240 * var(--u));
+    height: calc(572 * var(--u));
+  }
+
+  .street {
+    left: calc(220 * var(--u));
+    top: calc(1263.1 * var(--u));
+    width: calc(364 * var(--u));
+    height: calc(326 * var(--u));
+  }
+
+  .story {
+    left: calc(858 * var(--u));
+    top: calc(624.9 * var(--u));
+    width: calc(391.2 * var(--u));
+    font-size: calc(15 * var(--u));
+    text-align: left;
+  }
+
+  .pour {
+    left: calc(858 * var(--u));
+    top: calc(724.4 * var(--u));
+    width: calc(402 * var(--u));
+    height: calc(470 * var(--u));
+  }
+
+  .lime {
+    left: calc(105.5 * var(--u));
+    top: calc(797.5 * var(--u));
+    width: calc(138.1 * var(--u));
+    height: calc(159.7 * var(--u));
+  }
+
+  .face {
+    left: calc(929.5 * var(--u));
+    top: calc(1296 * var(--u));
+    width: calc(208 * var(--u));
+    height: calc(254.1 * var(--u));
+  }
+
+  .teaserStage {
+    padding: calc(20 * var(--u));
+  }
+
+  .paper {
+    min-height: calc(569.1 * var(--u));
+    padding-bottom: calc(17.9 * var(--u));
+  }
+
+  .teaserTitle {
+    width: calc(437.8 * var(--u));
+    margin: calc(67.8 * var(--u)) 0 0 calc(403.5 * var(--u));
+    font-size: calc(52 * var(--u));
+  }
+
+  .teaserMenu {
+    width: calc(1064 * var(--u));
+    margin: calc(16.7 * var(--u)) 0 0 calc(89 * var(--u));
+  }
+
+  .teaserButton {
+    width: calc(167.1 * var(--u));
+    height: calc(41.5 * var(--u));
+    margin: 0 0 0 calc(537.4 * var(--u));
+  }
+
+  /* The events section has a fixed 100px top padding on desktop. */
+  .events {
+    height: calc(100px + 350.4 * var(--u));
+  }
+
+  .eventsTitle {
+    left: calc(20 * var(--u));
+    top: calc(100px + 11 * var(--u));
+    width: calc(601.3 * var(--u));
+    font-size: calc(84 * var(--u));
+  }
+
+  .eventsLead,
+  .eventsText {
+    left: calc(458.5 * var(--u));
+    font-size: calc(15 * var(--u));
+  }
+
+  .eventsLead {
+    top: calc(100px + 237.2 * var(--u));
+    width: calc(345.1 * var(--u));
+  }
+
+  .eventsText {
+    top: calc(100px + 263.2 * var(--u));
+    width: calc(393.1 * var(--u));
+  }
+
+  /* Gallery section: 20px side gutters and a 20px bottom padding (fixed). */
+  .gallerySection {
+    height: calc(589 * var(--u) + 20px);
+  }
+
+  .galleryStage {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    bottom: 0;
+    left: 20px;
+  }
+
+  .margaritaOne {
+    left: 45.331%;
+    top: calc(1.7 * var(--u));
+    width: 17.863%;
+    height: auto;
+    aspect-ratio: 221.5 / 243.4;
+  }
+
+  .margaritaTwo {
+    left: 37.097%;
+    top: calc(44.8 * var(--u));
+    width: 15.573%;
+    height: auto;
+    aspect-ratio: 193.1 / 212.2;
+  }
+
+  .gallery {
+    left: 0;
+    top: calc(281.9 * var(--u));
+    width: 100%;
+    height: calc(306 * var(--u));
+  }
+
+  .testimonials {
+    height: calc(1071 * var(--u));
+  }
+
+  .slideshow {
+    left: calc(23.7 * var(--u));
+    top: 0;
+    width: calc(1240.6 * var(--u));
+    height: calc(1071 * var(--u));
+  }
+}

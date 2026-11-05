@@ -1,0 +1,71 @@
+.page {
+  padding-top: var(--header-h);
+  background: var(--c-bg);
+}
+
+.story {
+  position: relative;
+  height: calc(789.3 * var(--u));
+}
+
+.story > * {
+  position: absolute;
+}
+
+.image {
+  left: calc(24 * var(--u));
+  top: calc(24 * var(--u));
+  width: calc(342 * var(--u));
+  height: calc(204.7 * var(--u));
+  object-fit: cover;
+}
+
+.subtitle {
+  left: calc(42.5 * var(--u));
+  top: calc(264.1 * var(--u));
+  width: calc(305 * var(--u));
+}
+
+.title {
+  left: calc(84.1 * var(--u));
+  top: calc(348.8 * var(--u));
+  width: calc(221.8 * var(--u));
+}
+
+.body {
+  left: calc(24 * var(--u));
+  top: calc(445.6 * var(--u));
+  width: calc(342 * var(--u));
+  line-height: 1.35;
+}
+
+@media (min-width: 1024px) {
+  .story {
+    height: calc(1401.7 * var(--u));
+  }
+
+  .image {
+    left: calc(432.4 * var(--u));
+    top: calc(156.9 * var(--u));
+    width: calc(569.5 * var(--u));
+    height: calc(399 * var(--u));
+  }
+
+  .subtitle {
+    left: calc(527.3 * var(--u));
+    top: calc(670.1 * var(--u));
+    width: calc(385.5 * var(--u));
+  }
+
+  .title {
+    left: calc(208.6 * var(--u));
+    top: calc(853.6 * var(--u));
+    width: calc(1022.7 * var(--u));
+  }
+
+  .body {
+    left: calc(444.5 * var(--u));
+    top: calc(1056.1 * var(--u));
+    width: calc(551.7 * var(--u));
+  }
+}

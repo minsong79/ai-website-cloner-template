@@ -1,0 +1,41 @@
+.fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: var(--charcoal);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.desktopImg {
+  display: none;
+}
+
+.mobileImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: calc(624 * var(--u));
+  object-fit: cover;
+  object-position: 50% 0%;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (min-width: 980px) {
+  .desktopImg {
+    display: block;
+    width: 100%;
+    height: 120vh;
+    object-fit: cover;
+    object-position: 50% 50%;
+    opacity: 0.49;
+    will-change: transform;
+  }
+
+  .mobileImg {
+    display: none;
+  }
+}

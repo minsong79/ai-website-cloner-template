@@ -1,0 +1,184 @@
+/* Light-gray footer band. Positions are design px (--u): 390 mobile, 1440 desktop. */
+.footer {
+  position: relative;
+  height: calc(587.5 * var(--u));
+  background: var(--c-gray);
+  overflow: clip;
+}
+
+.footer > * {
+  position: absolute;
+  margin: 0;
+}
+
+.logo {
+  left: calc(3.2 * var(--u));
+  top: calc(20.4 * var(--u));
+  width: calc(386.8 * var(--u));
+  height: calc(57.5 * var(--u));
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.social {
+  left: calc(24 * var(--u));
+  width: calc(342 * var(--u));
+  font-family: var(--f-helv);
+  font-size: calc(22 * var(--u));
+  line-height: 1.1;
+  color: var(--c-ink);
+  text-align: center;
+}
+
+.instagram {
+  top: calc(115.9 * var(--u));
+}
+
+.facebook {
+  top: calc(152 * var(--u));
+}
+
+.text {
+  left: calc(24 * var(--u));
+  width: calc(342 * var(--u));
+  font-family: var(--f-mono);
+  font-size: calc(16 * var(--u));
+  line-height: 1.25;
+  letter-spacing: -0.05em;
+  color: var(--c-ink-soft);
+  text-align: center;
+}
+
+.address {
+  left: calc(66.9 * var(--u));
+  width: calc(256.1 * var(--u));
+  top: calc(209.4 * var(--u));
+}
+
+.email {
+  top: calc(290.7 * var(--u));
+}
+
+.phone {
+  top: calc(322.7 * var(--u));
+}
+
+.legal {
+  left: calc(24 * var(--u));
+  width: calc(342 * var(--u));
+  font-family: var(--f-mono);
+  font-size: calc(14 * var(--u));
+  line-height: 1.35;
+  letter-spacing: -0.05em;
+  color: var(--c-ink);
+  text-align: center;
+}
+
+.legal a {
+  text-decoration: underline;
+}
+
+.terms {
+  top: calc(388.9 * var(--u));
+}
+
+.accessibility {
+  top: calc(416.2 * var(--u));
+}
+
+.privacy {
+  top: calc(441.3 * var(--u));
+}
+
+.copyright {
+  left: calc(8 * var(--u));
+  width: calc(372 * var(--u));
+  top: calc(514.1 * var(--u));
+  color: var(--c-ink-soft);
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    height: calc(521.8 * var(--u));
+  }
+
+  .logo {
+    left: 0;
+    top: calc(205.7 * var(--u));
+    width: calc(1440.3 * var(--u));
+    height: calc(214 * var(--u));
+  }
+
+  .social {
+    top: calc(33.9 * var(--u));
+    font-size: calc(31.5 * var(--u));
+    text-align: start;
+  }
+
+  .facebook {
+    left: calc(1031.6 * var(--u));
+    width: calc(179.3 * var(--u));
+  }
+
+  .instagram {
+    left: calc(1202.4 * var(--u));
+    width: calc(215.3 * var(--u));
+    text-align: end;
+  }
+
+  .text {
+    font-size: calc(16.875 * var(--u));
+    text-align: start;
+  }
+
+  .email {
+    left: calc(22.6 * var(--u));
+    width: calc(288.9 * var(--u));
+    top: calc(33.6 * var(--u));
+  }
+
+  .phone {
+    left: calc(22.6 * var(--u));
+    width: calc(288.9 * var(--u));
+    top: calc(56.1 * var(--u));
+  }
+
+  .address {
+    left: calc(342.3 * var(--u));
+    width: calc(252.6 * var(--u));
+    top: calc(33.9 * var(--u));
+  }
+
+  .legal {
+    font-size: calc(15.75 * var(--u));
+    text-align: start;
+  }
+
+  .terms {
+    left: calc(20.1 * var(--u));
+    width: calc(178.8 * var(--u));
+    top: calc(427.8 * var(--u));
+  }
+
+  .accessibility {
+    left: calc(348 * var(--u));
+    width: calc(265.7 * var(--u));
+    top: calc(428.4 * var(--u));
+  }
+
+  .privacy {
+    left: calc(728.2 * var(--u));
+    width: calc(265.7 * var(--u));
+    top: calc(428.4 * var(--u));
+  }
+
+  .copyright {
+    left: calc(1031.5 * var(--u));
+    width: calc(376.8 * var(--u));
+    top: calc(426.7 * var(--u));
+  }
+}

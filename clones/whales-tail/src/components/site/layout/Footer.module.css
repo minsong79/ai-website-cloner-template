@@ -1,0 +1,252 @@
+/* Footer: mobile = stacked cells (320 design); desktop = two framed rows. */
+.footer {
+  position: relative;
+  padding-top: calc(var(--u) * 15);
+  color: var(--sand);
+}
+
+.box {
+  display: grid;
+  gap: 1px;
+  padding: 1px 0;
+  background: rgba(225, 208, 182, 0.6);
+}
+
+.rowTop {
+  grid-template-rows: calc(var(--u) * 71) calc(var(--u) * 62) calc(var(--u) * 150);
+}
+
+.rowBottom {
+  margin-top: -1px;
+  padding-bottom: 2px;
+  grid-template-rows: calc(var(--u) * 369) calc(var(--u) * 85);
+}
+
+.cell {
+  position: relative;
+  background: var(--ink);
+}
+
+.cellStar {
+  display: none;
+}
+
+.logo {
+  position: absolute;
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 20);
+  width: calc(var(--u) * 41);
+  height: calc(var(--u) * 30);
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.brand {
+  position: absolute;
+  left: calc(var(--u) * 76);
+  top: calc(var(--u) * 24);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 18);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.facebook,
+.instagram,
+.yelp,
+.email,
+.phone,
+.address {
+  position: absolute;
+  font-size: calc(var(--u) * 14);
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.facebook,
+.instagram,
+.yelp {
+  top: calc(var(--u) * 20);
+}
+
+.facebook {
+  left: calc(var(--u) * 19);
+}
+
+.instagram {
+  left: calc(var(--u) * 121);
+  width: calc(var(--u) * 78);
+  text-align: center;
+}
+
+.yelp {
+  left: calc(var(--u) * 226);
+  width: calc(var(--u) * 72);
+  text-align: center;
+}
+
+.email {
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 20);
+}
+
+.phone {
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 54);
+}
+
+.address {
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 85);
+}
+
+.newsText {
+  position: absolute;
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 20);
+  width: calc(var(--u) * 280);
+  font-family: var(--font-heading);
+  font-size: calc(var(--u) * 16);
+  line-height: 1.4;
+}
+
+.newsForm {
+  position: absolute;
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 65);
+  width: calc(var(--u) * 280);
+}
+
+.copy {
+  position: absolute;
+  left: calc(var(--u) * 20);
+  top: calc(var(--u) * 20);
+  font-size: calc(var(--u) * 14);
+  line-height: 1.6;
+  letter-spacing: -0.03em;
+}
+
+.copy a {
+  text-decoration: underline;
+}
+
+.star {
+  position: absolute;
+  left: calc(50% - var(--u) * 10);
+  top: calc(var(--u) * 40);
+  width: calc(var(--u) * 20);
+  height: calc(var(--u) * 20);
+  color: var(--sand);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    height: calc(var(--u) * 530);
+    padding-top: calc(var(--u) * 72);
+    box-sizing: border-box;
+  }
+
+  .box {
+    width: max(calc(var(--u) * 980), calc(100% - var(--u) * 160));
+    margin: 0 auto;
+    padding: 1px;
+    box-sizing: border-box;
+  }
+
+  .rowTop {
+    height: calc(var(--u) * 104);
+    grid-template-rows: none;
+    grid-template-columns: 382fr 345fr 549fr;
+  }
+
+  .rowBottom {
+    height: calc(var(--u) * 290);
+    padding-bottom: 1px;
+    grid-template-rows: none;
+    grid-template-columns: 63fr 893fr 255fr 64fr;
+  }
+
+  .cellStar {
+    display: block;
+  }
+
+  .logo {
+    left: calc(50% - var(--u) * 122);
+    top: calc(var(--u) * 36);
+    width: calc(var(--u) * 40);
+    height: calc(var(--u) * 29);
+  }
+
+  .brand {
+    left: calc(50% - var(--u) * 71);
+    top: calc(var(--u) * 38);
+    font-size: calc(var(--u) * 22);
+  }
+
+  .facebook,
+  .instagram,
+  .yelp,
+  .email,
+  .phone,
+  .address {
+    font-size: calc(var(--u) * 16);
+  }
+
+  .facebook,
+  .instagram,
+  .yelp {
+    top: calc(var(--u) * 38);
+    text-align: center;
+  }
+
+  .facebook {
+    left: calc(50% - var(--u) * 126.5);
+    width: calc(var(--u) * 85);
+  }
+
+  .instagram {
+    left: calc(50% - var(--u) * 33.5);
+    width: calc(var(--u) * 96);
+  }
+
+  .yelp {
+    left: calc(50% + var(--u) * 65.5);
+    width: calc(var(--u) * 54);
+  }
+
+  .email {
+    left: calc(50% - var(--u) * 199.5);
+    top: calc(var(--u) * 25);
+  }
+
+  .phone {
+    left: calc(50% - var(--u) * 199.5);
+    top: calc(var(--u) * 52);
+  }
+
+  .address {
+    left: calc(50% - var(--u) * 8.5);
+    top: calc(var(--u) * 25);
+  }
+
+  .newsText {
+    left: calc(50% - var(--u) * 327.5);
+    top: calc(var(--u) * 21);
+    width: calc(var(--u) * 221);
+  }
+
+  .newsForm {
+    left: calc(50% - var(--u) * 80.5);
+    top: calc(var(--u) * 3);
+    width: calc(var(--u) * 405);
+  }
+
+  .copy {
+    left: calc(50% - var(--u) * 86.5);
+    top: calc(var(--u) * 21);
+  }
+}

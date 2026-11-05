@@ -1,0 +1,302 @@
+/* ---------- shared field ---------- */
+.field {
+  position: relative;
+  min-width: 0;
+  font-family: var(--font-georgia);
+}
+
+.label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.value {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+.chevron[data-open] {
+  transform: rotate(180deg);
+}
+
+.list {
+  position: absolute;
+  z-index: 20;
+  left: 0;
+  right: 0;
+  max-height: 260px;
+  margin: 0;
+  padding: 8px 0;
+  overflow-y: auto;
+  list-style: none;
+  background: var(--charcoal);
+  color: var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.option {
+  height: 37px;
+  padding: 0 24px;
+  line-height: 37px;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+.option:hover,
+.option:focus,
+.option[aria-selected="true"] {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.dateControl {
+  cursor: default;
+}
+
+.dateInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  padding: 0 12px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.calendarBtn {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.calendarBtn svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- calendar popover ---------- */
+.calendar {
+  position: absolute;
+  z-index: 20;
+  left: 10px;
+  top: calc(100% + 0px);
+  width: 322px;
+  padding: 24px 20px 14px;
+  background: var(--white);
+  color: var(--charcoal);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+.calHead {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.calArrow {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--charcoal);
+  cursor: pointer;
+}
+
+.calArrow svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.calMonth {
+  flex: 1 1 auto;
+  height: 22px;
+  background: var(--charcoal);
+  color: var(--white);
+  text-align: center;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.calGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 0;
+  text-align: center;
+}
+
+.weekday {
+  height: 30px;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+
+.day {
+  justify-self: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--charcoal);
+  font-family: var(--font-georgia);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.day:hover:not(:disabled) {
+  background: rgba(174, 154, 100, 0.25);
+}
+
+.day[data-muted] {
+  color: #8a8a8a;
+}
+
+.day:disabled {
+  cursor: default;
+}
+
+.day[data-selected] {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+/* ---------- home widget variant (white fields over gold) ---------- */
+.field[data-variant="home"] .label {
+  font-size: calc(14 * var(--u));
+  line-height: calc(19.6 * var(--u));
+}
+
+.field[data-variant="home"] .control {
+  height: calc(40 * var(--u));
+  padding: 0 calc(6 * var(--u)) 0 1px;
+  background: var(--white);
+  color: var(--charcoal);
+  font-size: calc(16 * var(--u));
+  line-height: calc(22.4 * var(--u));
+}
+
+.field[data-variant="home"] .dateControl {
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.field[data-variant="home"] .list {
+  top: calc(100% + 0px);
+}
+
+/* ---------- reservations page variant (outlined dark fields) ---------- */
+.field[data-variant="page"] .label {
+  font-size: calc(15 * var(--u));
+  line-height: calc(21 * var(--u));
+}
+
+.field[data-variant="page"] .control {
+  height: calc(50 * var(--u));
+  padding: 0 calc(12 * var(--u)) 0 2px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: var(--charcoal);
+  color: var(--white);
+  font-size: calc(15 * var(--u));
+  line-height: calc(21 * var(--u));
+}
+
+.field[data-variant="page"] .dateControl {
+  padding: 0;
+}
+
+.field[data-variant="page"] .list {
+  top: calc(100% + 2px);
+  left: 2px;
+  right: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.field[data-variant="page"] .calendar {
+  background: var(--charcoal);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.field[data-variant="page"] .calArrow,
+.field[data-variant="page"] .day {
+  color: var(--white);
+}
+
+.field[data-variant="page"] .calMonth {
+  background: transparent;
+}
+
+.field[data-variant="page"] .day[data-muted] {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+@media (min-width: 980px) {
+  .field[data-variant="home"] .label {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .field[data-variant="home"] .control {
+    height: 40px;
+    padding: 0 10px 0 13px;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .field[data-variant="home"] .dateControl {
+    padding: 0;
+    border: 0;
+  }
+
+  .field[data-variant="page"] .label {
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .field[data-variant="page"] .control {
+    height: 50px;
+    padding: 0 12px 0 12px;
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .field[data-variant="page"] .dateControl {
+    padding: 0;
+  }
+}

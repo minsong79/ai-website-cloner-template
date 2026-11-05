@@ -1,0 +1,788 @@
+/*
+ * Home page. Mobile first: the source's 320px mobile layout, each source pixel = var(--u).
+ * Desktop (>= 980px): classic Wix 980px stage; section heights and element offsets
+ * come from measured source rects (see docs/research/page-brief.md).
+ */
+
+.home {
+  position: relative;
+}
+
+.stage {
+  position: relative;
+  display: flow-root;
+  width: calc(320 * var(--u));
+  margin: 0 auto;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+section.hero,
+section.restaurant,
+section.reservation,
+section.steak,
+section.bar,
+section.gallery,
+section.mailing,
+section.contact {
+  position: relative;
+  display: flow-root;
+}
+
+/* ---------------- social bar (desktop only) ---------------- */
+.social {
+  display: none;
+}
+
+/* ---------------- hero ---------------- */
+.hero {
+  min-height: calc(292 * var(--u));
+}
+
+.strip {
+  height: calc(53 * var(--u));
+  padding-top: calc(10 * var(--u));
+  background: var(--charcoal);
+}
+
+.address {
+  width: calc(274 * var(--u));
+  margin: 0 auto;
+  font-family: var(--font-georgia);
+  font-style: italic;
+  font-size: calc(15 * var(--u));
+  line-height: calc(15 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+.address a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand {
+  width: calc(299 * var(--u));
+  margin: calc(10 * var(--u)) 0 0 calc(10 * var(--u));
+  font-family: var(--font-anton);
+  font-weight: 400;
+  font-size: calc(61 * var(--u));
+  line-height: calc(54.9 * var(--u));
+  text-align: center;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.ls3 {
+  letter-spacing: -0.03em;
+}
+
+.ls2 {
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  width: calc(300 * var(--u));
+  margin: calc(10.1 * var(--u)) 0 0 calc(10 * var(--u));
+  font-size: calc(14 * var(--u));
+  line-height: calc(16.8 * var(--u));
+  text-align: center;
+  color: var(--white);
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(188 * var(--u));
+  height: calc(42 * var(--u));
+  margin: calc(25.2 * var(--u)) 0 0 calc(65 * var(--u));
+  background: var(--gold);
+  color: var(--white);
+  font-size: calc(14 * var(--u));
+  line-height: calc(19.6 * var(--u));
+  text-decoration: none;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+.menuBtn:hover {
+  background: var(--charcoal);
+  color: var(--gold);
+}
+
+/* ---------------- the restaurant ---------------- */
+.restaurant {
+  min-height: calc(905 * var(--u));
+  padding-bottom: calc(43 * var(--u));
+}
+
+.anchorOurPlace,
+.anchorContact {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.restTitle {
+  width: calc(280 * var(--u));
+  margin: calc(32 * var(--u)) 0 0 calc(19 * var(--u));
+  font-size: calc(23 * var(--u));
+  line-height: calc(27.6 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+.col {
+  margin-top: calc(32 * var(--u));
+}
+
+.col:first-child {
+  margin-top: calc(19.8 * var(--u));
+}
+
+.num {
+  width: calc(280 * var(--u));
+  margin: 0 0 0 calc(20 * var(--u));
+  font-size: calc(18 * var(--u));
+  line-height: 1.5;
+  text-align: center;
+  color: var(--white);
+}
+
+.numLine {
+  width: calc(96 * var(--u));
+  height: 5px;
+  margin: calc(20 * var(--u)) 0 0 calc(112 * var(--u));
+  border: 0;
+  border-top: 1px solid var(--gold);
+}
+
+.colTitle {
+  width: calc(280 * var(--u));
+  margin: calc(10 * var(--u)) 0 0 calc(20 * var(--u));
+  font-size: calc(19 * var(--u));
+  line-height: calc(22.8 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+.colText {
+  width: calc(280 * var(--u));
+  margin: calc(10 * var(--u)) 0 0 calc(20 * var(--u));
+  font-family: var(--font-georgia);
+  font-size: calc(15 * var(--u));
+  line-height: calc(22.5 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+/* ---------------- reservation widget ---------------- */
+.reservation {
+  min-height: calc(501 * var(--u));
+}
+
+.resWidget {
+  width: calc(288 * var(--u));
+  margin: calc(12 * var(--u)) auto 0;
+  color: var(--white);
+}
+
+.resTitle {
+  margin: 0;
+  font-size: calc(22 * var(--u));
+  line-height: calc(27 * var(--u));
+  text-align: center;
+}
+
+.resText {
+  margin: calc(20 * var(--u)) 0 0;
+  font-family: var(--font-georgia);
+  font-size: calc(16 * var(--u));
+  line-height: calc(22.4 * var(--u));
+  text-align: center;
+}
+
+.resRow {
+  display: flex;
+  flex-direction: column;
+  gap: calc(16 * var(--u));
+  margin-top: calc(40.8 * var(--u));
+}
+
+.findTable {
+  height: calc(40 * var(--u));
+  margin-top: calc(4 * var(--u));
+  border: 0;
+  background: rgba(50, 50, 50, 0.7);
+  color: var(--white);
+  font-family: var(--font-georgia);
+  font-size: calc(15 * var(--u));
+  line-height: calc(15 * var(--u));
+  cursor: pointer;
+}
+
+.findTable:hover {
+  background: rgba(50, 50, 50, 0.85);
+}
+
+/* ---------------- steak perfection / bar ---------------- */
+.steak {
+  min-height: calc(367 * var(--u));
+}
+
+.steakTitle,
+.barTitle {
+  width: calc(280 * var(--u));
+  margin: calc(54 * var(--u)) 0 0 calc(20 * var(--u));
+  font-size: calc(29 * var(--u));
+  line-height: calc(34.8 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+.steakText,
+.barText {
+  width: calc(280 * var(--u));
+  margin: calc(20.6 * var(--u)) 0 0 calc(20 * var(--u));
+  font-family: var(--font-georgia);
+  font-size: calc(14 * var(--u));
+  line-height: calc(21 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+.bar {
+  min-height: calc(305 * var(--u));
+}
+
+.barTitle {
+  margin-top: calc(43 * var(--u));
+  font-size: calc(26 * var(--u));
+  line-height: calc(31.2 * var(--u));
+  color: var(--white);
+}
+
+.barText {
+  margin-top: calc(15.6 * var(--u));
+  color: var(--white);
+}
+
+/* ---------------- gallery ---------------- */
+.gallery {
+  min-height: calc(540 * var(--u));
+  background: var(--charcoal);
+}
+
+.galleryTitle {
+  width: calc(300 * var(--u));
+  margin: calc(23 * var(--u)) 0 0 calc(10 * var(--u));
+  font-size: calc(30 * var(--u));
+  line-height: calc(36 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+.galleryGrid {
+  margin-top: calc(21 * var(--u));
+}
+
+/* ---------------- mailing list ---------------- */
+.mailing {
+  min-height: calc(338 * var(--u));
+  overflow: hidden;
+  overflow: clip;
+}
+
+.mailBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  overflow: clip;
+  background: var(--mailing);
+}
+
+.mailMedia {
+  position: absolute;
+  inset: 0;
+  opacity: 0.46;
+}
+
+.mailVideo {
+  display: none;
+}
+
+.mailPoster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+
+.mailDots {
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/dots-overlay.png") repeat;
+}
+
+.mailTitle {
+  width: calc(280 * var(--u));
+  margin: calc(53 * var(--u)) 0 0 calc(20 * var(--u));
+  font-size: calc(13 * var(--u));
+  line-height: 1.5;
+  text-align: center;
+  color: var(--gold);
+}
+
+/* ---------------- contact ---------------- */
+.contact {
+  min-height: calc(1293 * var(--u));
+  padding-bottom: calc(44 * var(--u));
+  background: var(--charcoal);
+}
+
+.contactTitle {
+  width: calc(300 * var(--u));
+  margin: calc(24 * var(--u)) 0 0 calc(10 * var(--u));
+  font-size: calc(30 * var(--u));
+  line-height: calc(36 * var(--u));
+  text-align: center;
+  color: var(--white);
+}
+
+.contactSub {
+  width: calc(280 * var(--u));
+  margin: calc(13 * var(--u)) 0 0 calc(20 * var(--u));
+  font-size: calc(12 * var(--u));
+  line-height: calc(15.6 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+.contactForm {
+  margin-top: calc(25.8 * var(--u));
+}
+
+.hours {
+  width: calc(252 * var(--u));
+  margin: calc(63 * var(--u)) 0 0 calc(34 * var(--u));
+  font-size: calc(12 * var(--u));
+  line-height: calc(20.4 * var(--u));
+  text-align: center;
+  color: var(--gold);
+}
+
+.map {
+  width: calc(280 * var(--u));
+  height: calc(240 * var(--u));
+  margin: calc(25 * var(--u)) 0 0 calc(20 * var(--u));
+  background: #2b2b2b;
+}
+
+.map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: invert(90%) hue-rotate(180deg) brightness(0.95) contrast(0.9);
+}
+
+.goTop {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.goTopArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(38 * var(--u));
+  height: calc(28 * var(--u));
+  margin: calc(12 * var(--u)) 0 0 calc(141 * var(--u));
+  color: var(--gold);
+}
+
+.goTopArrow svg {
+  width: calc(28 * var(--u));
+  height: calc(38 * var(--u));
+  transform: rotate(-90deg);
+}
+
+.goTopLink {
+  display: block;
+  width: calc(280 * var(--u));
+  height: calc(38 * var(--u));
+  margin: 0 0 0 calc(20 * var(--u));
+  padding-top: calc(12 * var(--u));
+  font-size: calc(9.24 * var(--u));
+  line-height: calc(12.93 * var(--u));
+  text-align: center;
+  color: var(--gold);
+  text-decoration: none;
+  transition: color 0.4s;
+}
+
+/* =========================== desktop =========================== */
+@media (min-width: 980px) {
+  .stage {
+    width: 980px;
+  }
+
+  .social {
+    display: block;
+    position: fixed;
+    z-index: 40;
+    right: 20px;
+    top: calc(50% - 136px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .social li + li {
+    margin-top: 10px;
+  }
+
+  .social a,
+  .social img {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
+  /* hero (76 → 1004) */
+  .hero {
+    min-height: 928px;
+  }
+
+  .strip {
+    height: 30px;
+    margin-top: -2px;
+    padding-top: 7px;
+  }
+
+  .address {
+    width: 444px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .brand {
+    width: 980px;
+    margin: 209px 0 0;
+    font-size: 210px;
+    line-height: 189px;
+  }
+
+  .tagline {
+    width: 911px;
+    margin: 6px 0 0 38px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .menuBtn {
+    width: 159px;
+    height: 40px;
+    margin: 20px 0 0 410px;
+    font-size: 13px;
+    line-height: 18.2px;
+  }
+
+  /* the restaurant (1004 → 1705) */
+  .restaurant {
+    min-height: 701px;
+    padding-bottom: 0;
+  }
+
+  .anchorOurPlace {
+    top: 8px;
+  }
+
+  .restTitle {
+    width: 890px;
+    margin: 116px 0 0 48px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .columns {
+    position: absolute;
+    top: 279px;
+    left: 0;
+    width: 980px;
+  }
+
+  .col,
+  .col:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 980px;
+    margin: 0;
+  }
+
+  .num {
+    width: 98px;
+    margin: 1px 0 0 95px;
+    font-size: 18px;
+  }
+
+  .numLine {
+    width: 96px;
+    margin: 7px 0 0 95px;
+  }
+
+  .colTitle {
+    width: 339px;
+    margin: 30px 0 0 -25px;
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  .colText {
+    width: 299px;
+    margin: 47px 0 0 0;
+    font-size: 15px;
+    line-height: 22.5px;
+  }
+
+  .col[data-col="2"] .num,
+  .col[data-col="2"] .numLine {
+    margin-left: 440px;
+  }
+
+  .col[data-col="2"] .colTitle {
+    width: 301px;
+    margin-left: 339px;
+  }
+
+  .col[data-col="2"] .colText {
+    margin-left: 340px;
+  }
+
+  .col[data-col="3"] .num {
+    margin: 0 0 0 782px;
+  }
+
+  .col[data-col="3"] .numLine {
+    margin-left: 782px;
+  }
+
+  .col[data-col="3"] .colTitle {
+    width: 367px;
+    margin: 31px 0 0 648px;
+  }
+
+  .col[data-col="3"] .colText {
+    margin-left: 681px;
+  }
+
+  /* reservation (1705 → 2562) */
+  .reservation {
+    min-height: 857px;
+  }
+
+  .resWidget {
+    width: 100%;
+    margin: 163px 0 0;
+    padding: 20px;
+  }
+
+  .resWidget > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .resTitle {
+    font-size: 40px;
+    line-height: 56px;
+  }
+
+  .resText {
+    margin-top: 40px;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .resRow {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 16px;
+    margin-top: 79.6px;
+  }
+
+  .resRow > div {
+    flex: 1 1 0;
+  }
+
+  .findTable {
+    flex: 0 0 107px;
+    height: 40px;
+    margin: 0;
+    font-size: 15px;
+    line-height: 15px;
+  }
+
+  /* steak perfection (2562 → 3320) */
+  .steak {
+    min-height: 758px;
+  }
+
+  .steakTitle {
+    width: 712px;
+    margin: 285px 0 0 134px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .steakText,
+  .barText {
+    width: 604px;
+    margin: 65px 0 0 188px;
+    font-size: 15px;
+    line-height: 22.5px;
+  }
+
+  /* bar (3320 → 4118) */
+  .bar {
+    min-height: 798px;
+  }
+
+  .barTitle {
+    width: 547px;
+    margin: 229px 0 0 217px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .barText {
+    margin-top: 40px;
+  }
+
+  /* gallery (4118 → 4790) */
+  .gallery {
+    min-height: 0;
+    padding-bottom: 6px;
+  }
+
+  .galleryTitle {
+    width: 570px;
+    margin: 40px 0 0 205px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .galleryGrid {
+    margin-top: 38px;
+  }
+
+  /* mailing list (4790 → 5168) */
+  .mailing {
+    min-height: 378px;
+  }
+
+  .mailMedia {
+    bottom: auto;
+    height: 100vh;
+    will-change: transform;
+  }
+
+  .mailVideo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 100%;
+  }
+
+  .mailPoster {
+    display: none;
+  }
+
+  .mailTitle {
+    width: 310px;
+    margin: 68px 0 0 335px;
+    font-size: 12px;
+  }
+
+  .mailing form {
+    margin-left: 142px;
+  }
+
+  /* contact (5168 → 6348) */
+  .contact {
+    min-height: 1180px;
+    padding-bottom: 42px;
+  }
+
+  .anchorContact {
+    top: 21px;
+  }
+
+  .contactTitle {
+    width: 565px;
+    margin: 70px 0 0 207px;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .contactSub {
+    width: 632px;
+    margin: 39px 0 0 174px;
+    font-size: 12px;
+    line-height: 15.6px;
+  }
+
+  .contactForm {
+    margin: 19.4px 0 0 182px;
+  }
+
+  .contactForm form {
+    margin: 0;
+  }
+
+  .hours {
+    width: 621px;
+    margin: 80px 0 0 179px;
+    font-size: 12px;
+    line-height: 20.4px;
+  }
+
+  .map {
+    width: 566px;
+    height: 256px;
+    margin: 29px 0 0 207px;
+  }
+
+  .goTop {
+    flex-direction: column;
+  }
+
+  .goTopArrow {
+    width: 26px;
+    height: 22px;
+    margin: 35px 0 0 477px;
+  }
+
+  .goTopArrow svg {
+    width: 22px;
+    height: 26px;
+  }
+
+  .goTopLink {
+    width: 162px;
+    height: 56px;
+    margin: 0 0 0 409px;
+    padding-top: 20px;
+    font-size: 12px;
+    line-height: 16.8px;
+  }
+}

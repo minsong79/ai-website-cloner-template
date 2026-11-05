@@ -1,0 +1,273 @@
+/* Mobile: 2 columns of 134x101 (320 source px) with 12px gaps. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: calc(12 * var(--u));
+  row-gap: calc(11.7 * var(--u));
+  width: calc(280 * var(--u));
+  min-height: calc(460 * var(--u));
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  align-content: start;
+}
+
+.item {
+  position: relative;
+  aspect-ratio: 134 / 101;
+  overflow: hidden;
+}
+
+.itemBtn {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.caption {
+  display: none;
+  font-family: var(--font-georgia);
+  font-size: 15px;
+  line-height: 25px;
+  color: #f8f8f8;
+  text-align: center;
+}
+
+/* ---------- lightbox ---------- */
+.card {
+  position: absolute;
+  left: calc(20 * var(--u));
+  right: calc(20 * var(--u));
+  top: calc(10 * var(--u));
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: calc(10 * var(--u)) calc(10 * var(--u)) 0;
+  background: var(--white);
+}
+
+.media {
+  flex: 0 0 auto;
+  aspect-ratio: 1;
+}
+
+.media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.panel {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--charcoal);
+  color: var(--white);
+  font-family: var(--font-georgia);
+  overflow-y: auto;
+}
+
+.panelHead {
+  display: flex;
+  align-items: center;
+  height: calc(53 * var(--u));
+  padding: 0 calc(14 * var(--u)) 0 calc(20 * var(--u));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.igLink {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(32 * var(--u));
+  height: calc(32 * var(--u));
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  color: var(--white);
+}
+
+.igLink svg {
+  width: 60%;
+  height: 60%;
+}
+
+.account {
+  flex: 1 1 auto;
+  margin: 0 0 0 calc(12 * var(--u));
+  font-size: calc(16 * var(--u));
+  line-height: calc(26 * var(--u));
+}
+
+.close {
+  width: calc(24 * var(--u));
+  height: calc(24 * var(--u));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.close svg,
+.nav svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin: calc(20 * var(--u)) calc(20 * var(--u)) 0;
+}
+
+.nav button {
+  width: calc(20 * var(--u));
+  height: calc(20 * var(--u));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.text {
+  margin: calc(16 * var(--u)) calc(20 * var(--u)) 0;
+  font-size: calc(14 * var(--u));
+  line-height: calc(22.4 * var(--u));
+}
+
+.date {
+  display: none;
+}
+
+@media (hover: hover) {
+  .itemBtn:hover .hover {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    width: 100%;
+    min-height: 460px;
+  }
+
+  .item {
+    aspect-ratio: 4 / 3;
+  }
+
+  .caption {
+    display: block;
+  }
+
+  .card {
+    left: 50%;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    width: 980px;
+    height: 603px;
+    flex-direction: row;
+    padding: 0;
+    background: var(--charcoal);
+    transform: translate(-50%, -50%);
+  }
+
+  .media {
+    width: 603px;
+    height: 603px;
+  }
+
+  .panel {
+    width: 377px;
+    overflow: visible;
+  }
+
+  .panelHead {
+    height: 80px;
+    padding: 0 32px;
+  }
+
+  .igLink {
+    width: 32px;
+    height: 32px;
+  }
+
+  .account {
+    margin-left: 12px;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .close {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+  }
+
+  .nav {
+    margin: 28px 32px 0;
+  }
+
+  .nav button {
+    width: 24px;
+    height: 24px;
+  }
+
+  .text {
+    margin: 20px 32px 0;
+    font-size: 16px;
+    line-height: 25.6px;
+  }
+
+  .date {
+    display: block;
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    bottom: 21px;
+    margin: 0;
+    padding-top: 0;
+    font-size: 14px;
+    line-height: 22.4px;
+  }
+
+  .date::before {
+    content: "";
+    position: absolute;
+    left: -32px;
+    right: -32px;
+    top: -25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+}

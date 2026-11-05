@@ -1,0 +1,52 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.backdrop[data-variant="photo-dark"] {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.backdrop[data-variant="photo-light"] {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.backdrop[data-variant="dim"] {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.backdrop[data-variant="solid"] {
+  background: var(--charcoal);
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.49;
+}
+
+@media (max-width: 979px) {
+  .photo {
+    content: url("/assets/images/page-bg-steak-fork-mobile.jpg");
+    object-position: 50% 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

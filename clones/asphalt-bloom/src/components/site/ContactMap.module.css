@@ -1,0 +1,99 @@
+.map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #3b3b3b;
+}
+
+/* Approximates the template's dark custom map style. */
+.frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(1) invert(0.9) contrast(0.9) brightness(1.05);
+}
+
+.marker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 27px;
+  height: 43px;
+  padding: 0;
+  border: 0;
+  background: none;
+  transform: translate(-50%, -100%);
+  cursor: pointer;
+}
+
+.marker svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  position: absolute;
+  left: 50%;
+  bottom: calc(50% + 48px);
+  width: 231px;
+  padding: 17px 48px 12px 15px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 7px 1px rgb(0 0 0 / 0.3);
+  transform: translateX(-50%);
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.info::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  border: 9px solid transparent;
+  border-top: 12px solid #fff;
+  border-bottom: 0;
+  transform: translateX(-50%);
+}
+
+.infoTitle {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+  color: #000;
+}
+
+.infoLink {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 15px;
+  color: var(--c-gold);
+  text-decoration: underline;
+}
+
+.infoClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border: 0;
+  background: none;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.infoClose:hover {
+  opacity: 1;
+}
+
+.infoClose svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: #000;
+}

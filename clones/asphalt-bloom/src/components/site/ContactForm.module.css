@@ -1,0 +1,101 @@
+/* Wix Forms widget: fixed pixel type/spacing; width follows its container. */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 465.6px;
+  padding: 24px;
+  background: var(--c-bg);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--f-mono);
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--c-light);
+}
+
+.required {
+  margin-left: 4px;
+}
+
+.inputWrap {
+  display: flex;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid rgb(222 221 219 / 0.6);
+  background: var(--c-bg);
+  transition: border-color 0.2s;
+}
+
+.inputWrap:hover,
+.inputWrap:focus-within {
+  border-color: var(--c-light);
+}
+
+.inputWrap input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 2px 8px 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-family: var(--f-helv);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--c-orange);
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--c-gray);
+}
+
+.error svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+
+.submit {
+  height: 43px;
+  padding: 11px 15px;
+  border: 1px solid var(--c-orange);
+  background: transparent;
+  font-family: var(--f-mono);
+  font-size: 16px;
+  line-height: 1.2;
+  color: #fff;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.submit:hover,
+.submit:focus-visible {
+  background: var(--c-orange);
+  color: var(--c-ink);
+}
+
+.success {
+  margin: auto 0;
+  font-family: var(--f-helv);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--c-light);
+  text-align: center;
+}

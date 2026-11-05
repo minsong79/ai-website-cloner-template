@@ -1,0 +1,176 @@
+/* Footer. Mobile first (390px design units); desktop below (1280px units). */
+.footer {
+  position: relative;
+  background: var(--cream);
+  color: var(--ink);
+  font-weight: 500;
+  font-size: calc(14 * var(--u));
+  line-height: 1.3em;
+}
+
+.stage {
+  position: relative;
+  height: calc(451.3 * var(--u));
+  margin-inline: auto;
+}
+
+.stage > * {
+  position: absolute;
+  margin: 0;
+}
+
+.social {
+  left: 0;
+  right: 0;
+  top: calc(40 * var(--u));
+  display: flex;
+  justify-content: center;
+  gap: calc(12 * var(--u));
+  padding: 0;
+  list-style: none;
+}
+
+.social a {
+  display: block;
+}
+
+.socialIcon {
+  display: block;
+  width: calc(20 * var(--u));
+  height: calc(20 * var(--u));
+  fill: var(--ink);
+}
+
+.address,
+.email,
+.phone,
+.link,
+.copyright {
+  left: calc(100% * 24 / 390);
+  right: calc(100% * 24 / 390);
+  text-align: center;
+}
+
+.address {
+  top: calc(73.9 * var(--u));
+}
+
+.email {
+  top: calc(125.3 * var(--u));
+}
+
+.phone {
+  top: calc(147.4 * var(--u));
+}
+
+.link a,
+.copyright a {
+  text-decoration: underline;
+}
+
+.accessibility {
+  top: calc(297.2 * var(--u));
+}
+
+.privacy {
+  top: calc(317.7 * var(--u));
+}
+
+.terms {
+  top: calc(338.5 * var(--u));
+}
+
+.refund {
+  top: calc(359.7 * var(--u));
+}
+
+.wordmark {
+  left: 50%;
+  top: calc(183.4 * var(--u));
+  width: calc(100% * 120 / 390);
+  height: calc(89 * var(--u));
+  transform: translateX(-50%);
+}
+
+.wordmark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.copyright {
+  left: calc(100% * 64.1 / 390);
+  right: calc(100% * 66.9 / 390);
+  top: calc(401.5 * var(--u));
+}
+
+@media (min-width: 1024px) {
+  .stage {
+    width: var(--sf);
+    height: calc(258.8 * var(--u));
+  }
+
+  .social {
+    top: calc(33.1 * var(--u));
+  }
+
+  .address {
+    left: 0;
+    right: 0;
+    top: calc(67.8 * var(--u));
+  }
+
+  .email {
+    left: calc(520.4 * var(--u));
+    right: auto;
+    width: calc(127.1 * var(--u));
+    top: calc(118.6 * var(--u));
+  }
+
+  .phone {
+    left: calc(661.4 * var(--u));
+    right: auto;
+    width: calc(98.2 * var(--u));
+    top: calc(118.6 * var(--u));
+  }
+
+  .link {
+    right: auto;
+    top: calc(206.4 * var(--u));
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .privacy {
+    left: calc(15.8 * var(--u));
+  }
+
+  .accessibility {
+    left: calc(117.8 * var(--u));
+  }
+
+  .refund {
+    left: calc(283.8 * var(--u));
+  }
+
+  .terms {
+    left: calc(384.8 * var(--u));
+  }
+
+  .wordmark {
+    left: calc(599.9 * var(--u));
+    top: calc(184.3 * var(--u));
+    width: calc(80.1 * var(--u));
+    height: calc(59.4 * var(--u));
+    transform: none;
+  }
+
+  .copyright {
+    left: auto;
+    right: calc(25 * var(--u));
+    top: calc(206.9 * var(--u));
+    text-align: right;
+    white-space: nowrap;
+  }
+}

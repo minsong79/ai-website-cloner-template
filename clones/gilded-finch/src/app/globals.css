@@ -1,130 +1,202 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+/*
+ * Fonts
+ * - Neue Haas Unica Pro is a commercial Monotype face served by Wix. The files are
+ *   fetched locally by `npm run fetch-fonts` (not committed). Without them the
+ *   stack falls back to Helvetica Neue / Arial.
+ * - Mansalva and Wix Madefor Text are SIL OFL fonts and are committed.
+ */
+@font-face {
+  font-family: "neue-haas-unica-pro";
+  src: url("/assets/fonts/licensed/neue-haas-unica-pro-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "neue-haas-unica-pro";
+  src: url("/assets/fonts/licensed/neue-haas-unica-pro-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "neue-haas-unica-pro";
+  src: url("/assets/fonts/licensed/neue-haas-unica-pro-500-italic.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "neue-haas-unica-pro";
+  src: url("/assets/fonts/licensed/neue-haas-unica-pro-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "mansalva";
+  src: url("/assets/fonts/mansalva-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "wix-madefor-text";
+  src: url("/assets/fonts/wix-madefor-text-latin.woff2") format("woff2");
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
-  --font-heading: var(--font-sans);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
+  --font-sans: "neue-haas-unica-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "mansalva", "Comic Sans MS", cursive;
+  --color-cream: #fefaf6;
+  --color-ink: #1d1d1d;
+  --color-shade: #f6ede6;
+  --color-lemon: #fcffc3;
 }
 
+/*
+ * Wix Studio "scaling factor": every size on this site is a coefficient of the
+ * viewport width (minus the scrollbar), clamped. Desktop (>= 1024px) values are
+ * authored at a 1280px design width and stop growing at 1920px; mobile (<= 1023px)
+ * values are authored at 390px and stop growing at 700px.
+ *   --u   = one design pixel at the current viewport
+ *   --sf  = the clamped content width
+ */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sbw: 0px;
+  --sf: min(calc(100vw - var(--sbw)), 700px);
+  --u: calc(var(--sf) / 390);
+  --cream: #fefaf6;
+  --ink: #1d1d1d;
+  --shade: #f6ede6;
+  --lemon: #fcffc3;
+  --font-body: "neue-haas-unica-pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-script: "mansalva", "Comic Sans MS", cursive;
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+@media (min-width: 1024px) {
+  :root {
+    --sf: min(calc(100vw - var(--sbw)), 1920px);
+    --u: calc(var(--sf) / 1280);
+  }
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+html {
+  background: var(--cream);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 500;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Shared section frame: a relative stage whose width tracks the scaling factor. */
+.wx-section {
+  position: relative;
+  width: 100%;
+}
+
+.wx-stage {
+  position: relative;
+  width: 100%;
+  margin-inline: auto;
+}
+
+@media (min-width: 1024px) {
+  .wx-stage {
+    width: var(--sf);
   }
-  body {
-    @apply bg-background text-foreground;
+}
+
+.wx-abs {
+  position: absolute;
+}
+
+/* Wix button presets */
+.wx-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: calc(2 * var(--u));
+  font-weight: 700;
+  font-size: calc(16 * var(--u));
+  line-height: 1.25em;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.wx-btn:hover .wx-btn-label,
+.wx-btn:focus-visible .wx-btn-label {
+  text-decoration: underline;
+}
+
+.wx-btn--primary {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.wx-btn--secondary {
+  background: var(--ink);
+  color: var(--cream);
+}
+
+@media (min-width: 1024px) {
+  .wx-btn {
+    font-size: calc(15 * var(--u));
   }
-  html {
-    @apply font-sans;
+}
+
+.wx-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.wx-skip {
+  position: fixed;
+  left: 50%;
+  top: 8px;
+  z-index: 100;
+  transform: translate(-50%, -200%);
+  background: #fff;
+  color: #116dff;
+  padding: 8px 16px;
+  font: 14px Helvetica, Arial, sans-serif;
+}
+
+.wx-skip:focus {
+  transform: translate(-50%, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

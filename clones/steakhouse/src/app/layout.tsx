@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { ChatWidget } from "@/components/site/ChatWidget";
+import { Footer } from "@/components/site/Footer";
+import { GlobalOverlays } from "@/components/site/GlobalOverlays";
+import { Header } from "@/components/site/Header";
+import { PageBackground } from "@/components/site/PageBackground";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: {
+    default: "HOME | steakhouse",
+    template: "%s | steakhouse",
+  },
+  description: "Steakhouse — Great American Food. A local Next.js clone of the Wix restaurant template.",
 };
 
 export default function RootLayout({
@@ -23,11 +20,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body>
+        <PageBackground />
+        <div className="site-root">
+          <Header />
+          <main id="main">{children}</main>
+          <Footer />
+        </div>
+        <ChatWidget />
+        <GlobalOverlays />
+      </body>
     </html>
   );
 }
