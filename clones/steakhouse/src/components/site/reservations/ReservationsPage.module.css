@@ -1,9 +1,19 @@
 .page {
   display: flow-root;
+  overflow-x: hidden;
+  overflow-x: clip;
   padding-bottom: calc(60 * var(--u));
   background: var(--charcoal);
   color: var(--white);
   font-family: var(--font-georgia);
+}
+
+.solidBg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: var(--charcoal);
+  pointer-events: none;
 }
 
 .inner {

@@ -175,3 +175,12 @@
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* Wix Madefor Text (OFL, published by Wix) — used only by the Wix checkout page. */
+@font-face {
+  font-family: "Wix Madefor Text";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("/assets/fonts/wix-madefor-text-vf.woff2") format("woff2");
+}

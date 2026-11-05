@@ -1,6 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Footer } from "@/components/site/layout/Footer";
-import { Header } from "@/components/site/layout/Header";
 import { BackToTop, DemoModeDialog, MobileMenu } from "@/components/site/layout/Overlays";
 import { ScrollbarWidth } from "@/components/site/motion";
 import { SideCart } from "@/components/site/order/SideCart";
@@ -30,9 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <SiteProvider>
           <ScrollbarWidth />
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          {children}
           <BackToTop />
           <MobileMenu />
           <DemoModeDialog />

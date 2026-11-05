@@ -127,6 +127,8 @@
   position: sticky;
   top: 0;
   z-index: 30;
+  overflow-x: hidden;
+  overflow-x: clip;
   margin-top: calc(22 * var(--u));
   background: var(--charcoal);
 }
@@ -217,11 +219,15 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: calc(12 * var(--u));
   margin: calc(32 * var(--u)) 0 0;
   padding: 0;
   list-style: none;
+}
+
+.grid > li {
+  min-width: 0;
 }
 
 .card {
@@ -267,7 +273,6 @@
   text-overflow: ellipsis;
   font-size: calc(16 * var(--u));
   line-height: calc(22.4 * var(--u));
-  letter-spacing: 0.02em;
 }
 
 .cardDesc {
@@ -410,6 +415,7 @@
   .tabsBar {
     top: 76px;
     margin-top: 44px;
+    padding-bottom: 6px;
   }
 
   .tabsInner {
@@ -466,7 +472,7 @@
   }
 
   .menuName {
-    margin-top: 46px;
+    margin-top: 40px;
     font-size: 32px;
     line-height: 47px;
   }

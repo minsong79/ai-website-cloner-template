@@ -23,6 +23,8 @@ export function ReservationsPage() {
 
   return (
     <section className={styles.page}>
+      {/* This page's Wix background is plain #323232 (no photo), visible below the footer. */}
+      <div className={styles.solidBg} aria-hidden="true" />
       <div className={styles.inner}>
         <nav className={styles.crumbs} aria-label="Breadcrumbs">
           <Link href="/">Home</Link>
