@@ -31,14 +31,23 @@ export function UnavailableDialog({ open, onClose }: { open: boolean; onClose: (
   );
 }
 
-export function useReservationState() {
+export type ReservationState = {
+  party: string;
+  setParty: (v: string) => void;
+  date: string;
+  setDate: (v: string) => void;
+  time: string;
+  setTime: (v: string) => void;
+};
+
+export function useReservationState(): ReservationState {
   const [party, setParty] = useState("2");
   const [date, setDate] = useState("");
   const [time, setTime] = useState(TIME_OPTIONS[0].value);
   return { party, setParty, date, setDate, time, setTime };
 }
 
-export function ReservationFields({ state }: { state: ReturnType<typeof useReservationState> }) {
+export function ReservationFields({ state }: { state: ReservationState }) {
   return (
     <>
       <Dropdown label="Party size" value={state.party} options={PARTY_SIZES} onChange={state.setParty} />
