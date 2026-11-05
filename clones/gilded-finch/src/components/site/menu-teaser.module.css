@@ -1,5 +1,6 @@
 /* Wix app widgets use fixed pixel type; only the widths follow the page scale. */
 .root {
+  container-type: inline-size;
   padding: 60px 20px;
   color: var(--ink);
   font-weight: 500;
@@ -35,13 +36,20 @@
   line-height: 18.75px;
 }
 
-@media (min-width: 1024px) {
+/* The widget switches layout by its own width (desktop user agents always get columns). */
+@container (min-width: 440px) {
   .list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
   }
 
+  .item {
+    padding: 20px 20px 32px;
+  }
+}
+
+@container (min-width: 760px) {
   .item {
     padding: 20px 42px 32px;
   }

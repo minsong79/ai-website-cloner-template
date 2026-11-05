@@ -1,5 +1,6 @@
 /* Wix app widget: fixed pixel typography and spacing, fluid widths. */
 .root {
+  container-type: inline-size;
   padding: 20px;
   background: var(--cream);
   color: var(--ink);
@@ -75,14 +76,17 @@
   line-height: 22.4px;
 }
 
-@media (min-width: 1024px) {
+/* Columns follow the widget width; prices move beside the names on wide widgets. */
+@container (min-width: 440px) {
   .sections {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 60px;
     align-items: start;
     padding-bottom: 0;
   }
+}
 
+@container (min-width: 900px) {
   .item {
     flex-direction: row;
     justify-content: space-between;
